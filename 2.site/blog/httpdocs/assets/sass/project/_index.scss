@@ -1,0 +1,365 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	TOPページ・一覧ページ
+------------------------------------------------------------*/
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.p-index_main {
+		max-width: $max_width;
+	}
+
+	.p-layout {
+		margin: 0 0 20px auto;
+		width: 100px;
+		background-color: #FFF;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+		display: table;
+		&__btn {
+			width: 50px;
+			height: 50px;
+			display: table-cell;
+			vertical-align: middle;
+			transition: background-color 500ms ease;
+			cursor: pointer;
+		}
+		&__in {
+			margin: 0 auto;
+			width: 16px;
+			height: 16px;
+			position: relative;
+		}
+		&__bar {
+			background-color: $gray03;
+			position: absolute;
+			transition: background-color 300ms ease;
+			&.is-s {
+				width: 4px;
+				height: 4px;
+				left: 0;
+			}
+			&.is-l {
+				width: 11px;
+				height: 4px;
+				right: 0;
+			}
+		}
+
+		&__btn {
+			&.is-card {
+				.p-layout__bar {
+					width: 7px;
+					height: 7px;
+					&:first-child {
+						top: 0;
+						left: 0;
+					}
+					&:nth-child(2) {
+						top: 0;
+						right: 0;
+					}
+					&:nth-child(3) {
+						bottom: 0;
+						left: 0;
+					}
+					&:last-child {
+						right: 0;
+						bottom: 0;
+					}
+				}
+			}
+			&.is-list {
+				.p-layout__bar {
+					&:first-child,
+					&:nth-child(2) {
+						top: 0;
+					}
+					&:nth-child(3),
+					&:nth-child(4) {
+						top: 6px;
+					}
+					&:nth-child(5),
+					&:last-child {
+						bottom: 0;
+					}
+				}
+			}
+			&.is-active {
+				cursor: text;
+				.p-layout__bar {
+					background-color: $blue01;
+				}
+			}
+			&:not(.is-active):hover {
+				background-color: $gray02;
+			}
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.p-layout {
+		display: none;
+	}
+}
+
+.p-article {
+	&__anc {
+		background-color: #FFF;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+		position: relative;
+		overflow: hidden;
+		transition: box-shadow 500ms;
+	}
+	&__time {
+		display: inline-block;
+		color: $gray06;
+		vertical-align: middle;
+	}
+	&__cate {
+		margin-right: 5px;
+		padding: 2px 10px;
+		min-width: 70px;
+		background-color: $gray05;
+		border-radius: 2px;
+		display: inline-block;
+		color: #FFF;
+		font-size: 1rem;
+		line-height: 1;
+		text-align: center;
+		vertical-align: middle;
+	}
+	&__ttl {
+		width: 100%;
+		overflow: hidden;
+		color: #111;
+		line-height: 1.5;
+		&--in {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__box {
+		width: 100%;
+		overflow: hidden;
+		color: $gray05;
+		&--txt {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__anc:hover {
+		text-decoration: none;
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.p-article {
+		margin-bottom: 30px;
+		&__anc {
+			&:before,
+			&:after {
+				opacity: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			&:before {
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 92, 175, .8);
+				border: 5px solid #fff;
+				z-index: 1;
+				content: "";
+				transition: opacity 500ms ease;
+			}
+			&:after {
+				z-index: 2;
+				color: #FFF;
+				font-size: 3.6rem;
+				line-height: 1.5;
+				font-weight: bold;
+				text-align: center;
+				content: "READ MORE";
+			}
+		}
+		&__time {
+			margin-right: 10px;
+			font-size: 1.2rem;
+		}
+		&__anc:hover {
+			box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+			&:before,
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	//リスト型
+	.is-layout_list {
+		.p-article {
+			&__anc {
+				width: 100%;
+				display: table;
+				&:after {
+					transition: opacity 300ms ease 100ms, left 300ms ease 100ms;
+				}
+			}
+			&__img,
+			&__detail {
+				display: table-cell;
+				vertical-align: top;
+			}
+			&__img {
+				width: 300px;
+			}
+			&__detail {
+				padding: 20px;
+			}
+			&__head {
+				margin-bottom: 15px;
+			}
+			&__ttl {
+				margin-bottom: 10px;
+				max-height: 60px;
+				font-size: 2rem;
+			}
+			&__box {
+				max-height: 45px;
+				&--txt {
+					-webkit-line-clamp: 2;
+				}
+			}
+			&__arrow {
+				width: 20px;
+				height: 20px;
+				border-top: 5px solid #fff;
+				border-right: 5px solid #fff;
+				opacity: 0;
+				position: absolute;
+				top: 50%;
+				right: 50%;
+				z-index: 2;
+				transform: translate(50%, -50%) rotate(45deg);
+				transition: opacity 300ms ease 100ms, right 300ms ease 100ms;
+			}
+
+			&__anc:hover {
+				&:after {
+					left: 45%;
+				}
+				.p-article__arrow {
+					right: 40%;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	//カード型
+	.is-layout_card {
+		.p-listBox {
+			margin-left: -30px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.p-article {
+			padding-left: 30px;
+			width: 33.3%;
+			&__anc {
+				height: 100%;
+				display: block;
+				&:after {
+					margin-top: 5%;
+					transition: opacity 300ms ease 100ms, margin 300ms ease 100ms;
+				}
+			}
+			&__detail {
+				padding: 15px;
+			}
+			&__head {
+				margin-bottom: 10px;
+			}
+			&__ttl {
+				margin-bottom: 5px;
+				max-height: 55px;
+				font-size: 1.8rem;
+			}
+			&__box {
+				max-height: 70px;
+				&--txt {
+					-webkit-line-clamp: 3;
+				}
+			}
+			&__arrow {
+				display: none;
+			}
+
+			&__anc:hover {
+				&:after {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.p-article {
+		&__anc {
+			padding: 15px 30px 15px 15px;
+			width: 100%;
+			display: table;
+			position: relative;
+			&:after {
+				width: 10px;
+				height: 10px;
+				border-top: 2px solid $blue01;
+				border-right: 2px solid $blue01;
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				content: "";
+				transform: translateY(-50%) rotate(45deg);
+			}
+		}
+		&__time {
+			margin-right: 5px;
+			font-size: 1.1rem;
+		}
+		&__img,
+		&__detail {
+			display: table-cell;
+			vertical-align: top;
+		}
+		&__img {
+			padding-right: 15px;
+			width: 80px;
+		}
+		&__head {
+			margin-bottom: 5px;
+			line-height: 1;
+		}
+		&__ttl {
+			margin-bottom: 5px;
+		}
+		&__box {
+			height: 20px;
+			font-size: 1.3rem;
+			&--txt {
+				-webkit-line-clamp: 1;
+			}
+		}
+		&__arrow {
+			display: none;
+		}
+	}
+}

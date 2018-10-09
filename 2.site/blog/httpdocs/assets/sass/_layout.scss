@@ -1,0 +1,783 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	レイアウト
+------------------------------------------------------------*/
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: $gray01;
+	line-height: 1.75;
+}
+
+a {
+	color: $blue03;
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	a {
+		text-decoration: none;
+	}
+}
+
+
+#container {
+	min-height: 100%;
+	position: relative;
+}
+
+.l-main {
+	margin: 0 auto;
+	color: $gray08;
+	font-size: 1.4rem;
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	#container {
+		padding-bottom: 120px;
+	}
+	.l-main {
+		margin-top: 40px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	#container {
+		padding-bottom: 125px;
+	}
+	.l-main {
+		margin-top: 20px;
+	}
+}
+
+/*------------------------------------------------------------
+	ヘッダー
+------------------------------------------------------------*/
+.l-header {
+	background-color: $blue01;
+	position: relative;
+	z-index: $zi-header;
+}
+
+.is-menu_open {
+	.l-header {
+		z-index: auto;
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.l-header {
+		padding: 13px 20px 12px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.l-header {
+		padding: 12px 10px 10px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+		&__logo {
+			padding-bottom: 12px;
+			line-height: 1;
+			text-align: center;
+			&--img {
+				width: auto;
+				height: 17px;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	グローバルナビ
+------------------------------------------------------------*/
+.l-gnavi {
+	&__menu {
+		width: 40px;
+		height: 40px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+		border-radius: 2px;
+		overflow: hidden;
+		position: absolute;
+		z-index: $zi-menu;
+		cursor: pointer;
+		transition: box-shadow 500ms ease;
+		&--in {
+			width: 20px;
+			height: 14px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&--bar {
+			width: 20px;
+			height: 2px;
+			background-color: #FFF;
+			position: absolute;
+			left: 0;
+			transform-origin: top center;
+			transition: 300ms ease;
+			&.is-top {
+				top: 0;
+				transform: rotate(0) translateY(0);
+			}
+			&.is-middle {
+				margin-top: -1px;
+				top: 50%;
+				opacity: 1;
+				transform: translateX(0);
+			}
+			&.is-bottom {
+				bottom: 0;
+				transform: rotate(0) translateY(0);
+			}
+		}
+	}
+	&__search {
+		&--in {
+			background-color: #FFF;
+			border-radius: 2px;
+			display: block;
+			position: relative;
+		}
+		&--text {
+			height: 100%;
+			background: none;
+			border: none;
+			&:placeholder-shown {
+				color: $gray04;
+			}
+			&::-webkit-input-placeholder {
+				color: $gray04;
+			}
+			&:-moz-placeholder {
+				color: $gray04;
+				opacity: 1;
+			}
+			&::-moz-placeholder {
+				color: $gray04;
+				opacity: 1;
+			}
+			&:-ms-input-placeholder {
+				color: $gray04;
+			}
+		}
+		&--btn {
+			height: 100%;
+			background-color: $gray03;
+			border-radius: 0 2px 2px 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+			transition: background-color 500ms ease;
+		}
+	}
+
+	&__after {
+		width: 0;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: $zi-overlay;
+		content: "";
+		transition: 300ms ease;
+		cursor: pointer;
+	}
+
+	&__overlay {
+		width: 100%;
+		max-width: $max_width;
+		// height: 100%;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		left: 0;
+		z-index: $zi-navi;
+		transition: opacity 300ms ease, width 500ms ease;
+		&--scrl {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+		&--in {
+			padding-top: 40px;
+		}
+		&--ttl {
+			color: #FFF;
+		}
+	}
+
+	&__cate {
+		&--list {
+			border-bottom: 1px solid rgba(0, 0, 0, 0);
+		}
+		&--anc {
+			height: 100%;
+			background-color: #FFF;
+			display: block;
+			color: $blue01;
+			font-size: 1.4rem;
+			transition: color 500ms ease, background-color 500ms ease;
+		}
+	}
+
+	&__tag {
+		letter-spacing: -0.4em;
+		&--list {
+			display: inline-block;
+			letter-spacing: normal;
+		}
+		&--anc {
+			background-color: #FFF;
+			border-radius: 5px;
+			display: block;
+			color: $blue01;
+			font-size: 1.4rem;
+			transition: color 500ms ease, background-color 500ms ease;
+		}
+	}
+}
+
+//メニュー開いた時
+.is-menu_open {
+	width: 100%;
+	position: fixed;
+	.l-gnavi {
+		&__menu {
+			position: fixed;
+			&--bar {
+				&.is-top {
+					top: 6px;
+					transform: rotate(45deg) translate(1px);
+				}
+				&.is-middle {
+					opacity: 0;
+					transform: translateX(100%);
+				}
+				&.is-bottom {
+					bottom: 6px;
+					transform: rotate(-45deg) translate(-1px);
+				}
+			}
+		}
+		&__after {
+			width: 100%;
+			opacity: 1;
+		}
+		&__overlay {
+			opacity: 1;
+		}
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.l-gnavi {
+		&__menu {
+			top: 10px;
+			right: 20px;
+
+			&:hover {
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+			}
+		}
+		&__search {
+			position: absolute;
+			top: 20px;
+			right: 80px;
+			z-index: 1;
+			&--in {
+				width: 160px;
+				height: 20px;
+			}
+			&--text {
+				padding: 2px 10px;
+				width: calc(100% - 30px);
+				font-size: 1.2rem;
+			}
+			&--btn {
+				width: 30px;
+				&:hover {
+					background-color: $blue03;
+				}
+			}
+		}
+
+		&__overlay {
+			top: 50%;
+			transform: translateY(-50%) translateX(-100%);
+			&--in {
+				padding-bottom: 40px;
+			}
+			&--box {
+				&:not(:first-child) {
+					margin-top: 60px;
+				}
+			}
+			&--ttl {
+				margin-bottom: 15px;
+				font-size: 1.6rem;
+			}
+		}
+
+		&__cate {
+			display: flex;
+			flex-wrap: wrap;
+			&--list {
+				width: calc(100% / 3);
+				&:not(:nth-child(3n+1)) {
+					border-left: 1px solid rgba(0, 0, 0, 0);
+				}
+			}
+			&--anc {
+				padding: 15px;
+				&:hover {
+					background-color: $blue03;
+					color: #FFF;
+					text-decoration: none;
+				}
+			}
+		}
+
+		&__tag {
+			&--list {
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			&--anc {
+				padding: 10px 20px;
+				&:hover {
+					background-color: $blue03;
+					color: #FFF;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.is-menu_open {
+		.l-gnavi {
+			&__overlay {
+				left: 50%;
+				transform: translateY(-50%) translateX(-50%);
+			}
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.l-gnavi {
+		&__menu {
+			top: 0;
+			right: 0;
+		}
+		&__search {
+			margin-top: 10px;
+			&--in {
+				width: 100%;
+				// height: 20px;
+			}
+			&--text {
+				padding: 5px;
+				width: calc(100% - 60px);
+				font-size: 1.4rem;
+
+				&::-webkit-input-placeholder {
+					padding-top: 4px;
+				}
+
+				&::-moz-placeholder {
+					padding-top: 4px;
+				}
+
+			}
+			&--btn {
+				width: 60px;
+			}
+		}
+
+		&__overlay {
+			height: 100%;
+			top: 0;
+			transform: translateX(-100%);
+			&--scrl {
+				height: 100%;
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch;
+			}
+			&--in {
+				padding-bottom: 20px;
+			}
+			&--box {
+				&:not(:first-child) {
+					margin-top: 30px;
+				}
+			}
+			&--ttl {
+				margin-bottom: 15px;
+				font-size: 1.4rem;
+			}
+		}
+
+		&__cate {
+			&--anc {
+				padding: 10px 25px 10px 10px;
+				position: relative;
+				&:after {
+					width: 7px;
+					height: 7px;
+					border-top: 1px solid $blue01;
+					border-right: 1px solid $blue01;
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					content: "";
+					transform: translateY(-50%) rotate(45deg);
+				}
+			}
+		}
+
+		&__tag {
+			&--list {
+				margin-right: 5px;
+				margin-bottom: 5px;
+			}
+			&--anc {
+				padding: 5px 10px;
+			}
+		}
+	}
+
+	.is-menu_open {
+		.l-gnavi {
+			&__overlay {
+				transform: translateX(0);
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	パンクズリスト
+------------------------------------------------------------*/
+.l-pagepath {
+	background-color: $blue02;
+	&__in {
+		margin: 0 auto;
+		max-width: $width;
+		display: flex;
+		overflow: hidden;
+	}
+	&__list {
+		position: relative;
+		overflow: hidden;
+		&:first-child {
+			z-index: 3;
+		}
+		&:nth-child(2) {
+			z-index: 2;
+		}
+		&:last-child {
+			flex: 1;
+			z-index: 1;
+		}
+		&:not(:last-child) {
+			&:before,
+			&:after {
+				border-top: solid transparent;
+				border-right: 0 solid transparent;
+				border-bottom: solid transparent;
+				position: absolute;
+				top: 50%;
+				content: "";
+			}
+			&:before {
+				border-left: solid rgba(255, 255, 255, .9);
+				right: 0;
+				z-index: 0;
+			}
+			&:after {
+				border-left: solid $blue02;
+				right: 1px;
+				z-index: 1;
+			}
+		}
+	}
+	&__anc {
+		background-color: rgba(255, 255, 255, 0);
+		display: block;
+		position: relative;
+		z-index: 2;
+		color: rgba(255, 255, 255, .9);
+		line-height: 1;
+		transition: background-color 300ms ease;
+		&.is-not_anc {
+			pointer-events: none;
+		}
+	}
+	&__txt {
+		display: block;
+		position: relative;
+		z-index: 1;
+		&:after {
+			border-top: solid transparent;
+			border-right: 0 solid transparent;
+			border-bottom: solid transparent;
+			border-left: solid rgba(255, 255, 255, 0);
+			position: absolute;
+			top: 50%;
+			content: "";
+			transition: border-left-color 300ms ease;
+		}
+	}
+
+	&__list:last-child {
+		.l-pagepath__txt {
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.l-pagepath {
+		box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+		&__list {
+			margin-right: -10px;
+			padding-right: 10px;
+			&:not(:last-child) {
+				&:before,
+				&:after {
+					margin-top: -30px;
+					border-top-width: 30px;
+					border-bottom-width: 30px;
+				}
+				&:before {
+					border-left-width: 9px;
+				}
+				&:after {
+					border-left-width: 10px;
+				}
+			}
+		}
+		&__anc {
+			padding-left: 10px;
+			font-size: 1.2rem;
+		}
+		&__txt {
+			padding: 15px 20px;
+			&:after {
+				margin-top: -30px;
+				border-top-width: 30px;
+				border-bottom-width: 30px;
+				border-left-width: 9px;
+				right: -9px;
+			}
+		}
+
+		&__anc:hover {
+			background-color: rgba(255, 255, 255, .5);
+			text-decoration: none;
+			.l-pagepath__txt {
+				&:after {
+					border-left-color: rgba(255, 255, 255, .5);
+				}
+			}
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.l-pagepath {
+		box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+		&__list {
+			margin-right: -5px;
+			padding-right: 5px;
+			&:not(:last-child) {
+				&:before,
+				&:after {
+					margin-top: -15px;
+					border-top-width: 15px;
+					border-bottom-width: 15px;
+				}
+				&:before {
+					border-left-width: 4px;
+				}
+				&:after {
+					border-left-width: 5px;
+				}
+			}
+		}
+		&__anc {
+			padding-left: 5px;
+			font-size: 1.2rem;
+		}
+		&__txt {
+			padding: 5px 10px;
+			&:after {
+				margin-top: -15px;
+				border-top-width: 15px;
+				border-bottom-width: 15px;
+				border-left-width: 4px;
+				right: -4px;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	固定ボタン
+------------------------------------------------------------*/
+.l-fix_menu {
+	border-radius: 4px;
+	box-shadow: 0 0 7px rgba(0, 0, 0, .7);
+	position: fixed;
+	z-index: $zi-fix_menu;
+	&__btn {
+		position: relative;
+	}
+	&__anc {
+		border-radius: 4px;
+		background-color: $blue02;
+		display: block;
+		overflow: hidden;
+		z-index: 0;
+		color: #FFF;
+		transition: width 500ms ease;
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.l-fix_menu {
+		width: 60px;
+		height: 60px;
+		right: 20px;
+		bottom: 40px;
+		&__btn {
+			width: 60px;
+			height: 60px;
+		}
+		&__anc {
+			padding-left: 60px;
+			width: 60px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			color: #FFF;
+			&:hover {
+				width: 200px;
+			}
+		}
+		&__icon,
+		&__txt {
+			position: absolute;
+			top: 50%;
+			z-index: 1;
+			transform: translateY(-50%);
+		}
+		&__icon {
+			left: 20px;
+		}
+		&__txt {
+			width: 140px;
+			display: block;
+			left: 60px;
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.l-fix_menu {
+		width: 45px;
+		height: 45px;
+		right: 10px;
+		bottom: 20px;
+		&__btn {
+			width: 100%;
+			height: 100%;
+		}
+		&__anc {
+			height: 100%;
+			display: block;
+			font-size: 1.1rem;
+			line-height: 1;
+		}
+		&__icon {
+			margin-top: 12px;
+			margin-bottom: 3px;
+			width: 100%;
+		}
+		&__txt {
+			display: none;
+		}
+	}
+}
+
+
+/*------------------------------------------------------------
+	フッター
+------------------------------------------------------------*/
+.l-footer {
+	width: 100%;
+	background-color: $blue01;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	&__copyright {
+		color: #FFF;
+		font-size: 1.2rem;
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.l-footer {
+		margin-top: 60px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		height: 60px;
+		box-shadow: 0 0 7px rgba(0, 0, 0, .7);
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.l-footer {
+		margin-top: 40px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		height: 40px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	}
+}

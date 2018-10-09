@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	変数まとめ
+------------------------------------------------------------*/
+
+/* 横幅定義
+
+$max_width・・・・コンテンツの最大幅
+$min_width・・・・コンテンツの最小幅
+$width・・・・・・・・コンテンツ幅
+
+ブレークポイントの設定は「${命名}_break_w」で定義
+コメントも必須
+
+例）
+$pc_break_w・・・PCのブレークポイント
+$sp_break_w・・・SPのブレークポイント
+*/
+
+$max_width  : 1000px;
+$width      : 960px;
+$min_width  : 320px;
+
+$pc_break_w : 901px;
+$sp_break_w : $pc_break_w - 1;
+
+$pc_break_verticalonly_w : 651px;
+$sp_break_verticalonly_w : $pc_break_verticalonly_w - 1;
+
+$pc_break_max_w : 1200px;
+
+$line_size01 : 1500px;
+$line_size02 : 1300px;
+$line_size03 : 1100px;
+$line_size04 : 900px;
+$line_size05 : 700px;
+$line_size06 : 500px;
+
+/* カラー定義
+
+「$is_color_{色}{0x}」で定義
+数値はできるだけ薄い色～濃い色の順にする
+
+例）
+$is_break_wb01: #fff;
+$is_break_wb02: #000;
+*/
+
+//アルファの設定あり
+$is_color_wb01a75 : rgba(255, 255, 255, .75);
+$is_color_wb01a8  : rgba(255, 255, 255, .8);
+$is_color_wb01a85 : rgba(255, 255, 255, .85);
+$is_color_wb02a0 : rgba(0, 0, 0, 0);
+$is_color_wb02a1 : rgba(0, 0, 0, .1);
+$is_color_wb02a2 : rgba(0, 0, 0, .2);
+$is_color_wb02a3 : rgba(0, 0, 0, .3);
+$is_color_wb02a4 : rgba(0, 0, 0, .4);
+$is_color_wb02a5 : rgba(0, 0, 0, .5);
+$is_color_wb02a7 : rgba(0, 0, 0, .7);
+$is_color_wb02a8 : rgba(0, 0, 0, .8);
+
+$is_color_wb01   : #fff;
+$is_color_wb02   : #000;
+$is_color_wb03   : #333;
+$is_color_wb04   : #666;
+$is_color_wb05   : #999;
+$is_color_wb06   : #ccc;
+$is_color_wb07   : #222;
+$is_color_wb08   : #bbb;
+$is_color_wb09   : #eee;
+
+//オレンジ
+$is_color_or01   : #ed6c00;
+$is_color_or01a4 : rgba(237, 108, 0, .4);
+$is_color_or01a5 : rgba(237, 108, 0, .5);
+$is_color_or01a6 : rgba(237, 108, 0, .6);
+$is_color_or01a8 : rgba(237, 108, 0, .8);
+$is_color_or01a9 : rgba(237, 108, 0, .9);
+$is_color_or02   : #ed9400;
+
+//紫
+$is_color_purple : #800080;
+
+//赤
+$is_color_red01  : #ca0000;
+$is_color_red02  : #ffdddd;
+
+//緑
+$is_color_gre01  : #18F020;
+$is_color_gre02  : #006D2C;
+
+/* z-index定義
+
+「${指定class or id名}_num」で定義
+数値順になるように並べる
+
+例）
+$l-header_num: 100;
+$l-gnavi_num : 300;
+*/
+
+$l-header_num  : 100;
+$l-pagetop_num : 100;
+$l-topline_num : 125;
+$l-overlay_num : 150;
+$l-gnavi_num   : 300;
+$l-menu_num    : 500;
+$panelOver_num : 700;
+$looding_num   : 900;
+
+/* font-family定義
+
+「$ff_{font-family名}」で定義
+「$ff_all」はサイト固定のfont-family
+
+例）
+$ff_all: "メイリオ", "Meiryo", "ＭＳＰゴシック","ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", Arial, sans-serif;
+
+$ff_meiryo: "メイリオ", "Meiryo", sans-serif;
+$ff_hirakakuGo: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", sans-serif;
+*/
+
+$ff_all: "メイリオ", "Meiryo", "ＭＳＰゴシック","ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+
+$ff_meiryo: "メイリオ", "Meiryo", sans-serif;
+$ff_hirakakugo: 'Hiragino Kaku Gothic ProN', sans-serif;
+
+$ff_shs-jp     : "source-han-sans-japanese", sans-serif;
+$ff_shs-jp-min : "source-han-serif-japanese", serif;
+$ff_roboto     : "roboto", sans-serif;
+$ff_roboto-c   : "roboto-condensed", sans-serif;
+
+/* その他の数値 */
+$header_h_pc      : 82px;
+$header_h_sp      : 60px;
+$header_h_pc_move : 82px;
+
+//TOP
+$panel_start      : 2;
+$panel_max        : 6;
+$panel_size       : 100% / $panel_max;
+
+//business_mv
+$letershow-num_min : 1;
+$letershow-num_max : 50;
+
+
+////////////////////////
+//      Magnific-Popup Settings      //
+////////////////////////
+
+// overlay
+$mfp-overlay-color:                   #0b0b0b !default;                    // Color of overlay screen
+$mfp-overlay-opacity:                 0.8 !default;                        // Opacity of overlay screen
+$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6) !default; // Shadow on image or iframe
+
+// spacing
+$mfp-popup-padding-left:              8px !default;                        // Padding from left and from right side
+$mfp-popup-padding-left-mobile:       6px !default;                        // Same as above, but is applied when width of window is less than 800px
+
+$mfp-z-index-base:                    1040 !default;                       // Base z-index of popup
+
+// controls
+$mfp-include-arrows:                  true !default;                       // Include styles for nav arrows
+$mfp-controls-opacity:                0.65 !default;                       // Opacity of controls
+$mfp-controls-color:                  #FFF !default;                       // Color of controls
+$mfp-controls-border-color:           #3F3F3F !default; 	                 // Border color of controls
+$mfp-inner-close-icon-color:          #333 !default;                       // Color of close button when inside
+$mfp-controls-text-color:             #CCC !default;                       // Color of preloader and "1 of X" indicator
+$mfp-controls-text-color-hover:       #FFF !default;                       // Hover color of preloader and "1 of X" indicator
+
+// Iframe-type options
+$mfp-include-iframe-type:             true !default;                       // Enable Iframe-type popups
+$mfp-iframe-padding-top:              40px !default;                       // Iframe padding top
+$mfp-iframe-background:               #000 !default;                       // Background color of iframes
+$mfp-iframe-max-width:                900px !default;                      // Maximum width of iframes
+$mfp-iframe-ratio:                    9/16 !default;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+
+// Image-type options
+$mfp-include-image-type:              true !default;                       // Enable Image-type popups
+$mfp-image-background:                #444 !default;
+$mfp-image-padding-top:               40px !default;                       // Image padding top
+$mfp-image-padding-bottom:            40px !default;                       // Image padding bottom
+$mfp-include-mobile-layout-for-image: true !default;                       // Removes paddings from top and bottom
+
+// Image caption options
+$mfp-caption-title-color:             #F3F3F3 !default;                    // Caption title color
+$mfp-caption-subtitle-color:          #BDBDBD !default;                    // Caption subtitle color
+
+// A11y
+$mfp-use-visuallyhidden:              false !default;                      // Hide content from browsers, but make it available for screen readers

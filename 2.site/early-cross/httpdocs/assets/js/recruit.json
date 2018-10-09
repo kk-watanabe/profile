@@ -1,0 +1,98 @@
+{
+  "1" : {
+    "title" : "セールスプロモーター（SP事業）",
+    "business_content" : "広告（ポスター、チラシ、パンフレット）印刷や、ノベルティ（ふせん紙、メモ帳等）の提案営業です。<br>既存顧客や受注があったお客様に対してアプローチしていきます。<br>試用期間中は、先輩上司と一緒に営業活動をして頂き、必要な知識・経験を積んで頂きます。",
+    "employment_status" : "正社員",
+    "required_skills" : "PC操作（Excel、Word、PowerPointなど）<br>普通自動車免許（AT限定可）",
+    "educational" : "専門・短大卒以上<br>未経験者歓迎",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "2" : {
+    "title" : "インターネット通販受付事務（EC事業）",
+    "business_content" : "自社運営サイトのネット通販での電話対応、メール対応、受注管理等の内勤業務<br>自社運営サイト（ふせん紙王国、メモ帳王国、クリアファイル王国）のHPをご覧ください。",
+    "employment_status" : "正社員",
+    "required_skills" : "パソコンのブラインドタッチが出来る方<br>キーボードのショートカットキーの操作ができる方<br>普通自動車免許（AT限定可）",
+    "educational" : "専門・短大・大学卒以上<br>未経験者歓迎",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "3" : {
+    "title" : "製造管理スタッフ",
+    "business_content" : "入出荷管理・生産管理・在庫管理などの管理業務全般に携わって頂きます。<br>初めは、管理担当者から製造に必要な知識等を学びながら、スタートしていきます。",
+    "employment_status" : "正社員",
+    "required_skills" : "印刷会社・製本会社で働いていた方優遇<br>PC操作あり（Excel等）<br>普通自動車免許（AT限定可）",
+    "educational" : "高校卒以上<br>未経験者歓迎",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "4" : {
+    "title" : "製造オペレーター",
+    "business_content" : "ふせん紙、メモ帳の製本業務<br>断裁機、折り機等の「機械操作」と「手作業」、両方で作製していきます。",
+    "employment_status" : "正社員",
+    "required_skills" : "印刷会社・製本会社で働いていた方優遇<br>PC操作あり（Excel等）<br>普通自動車免許（AT限定可）",
+    "educational" : "高校卒以上<br>未経験者歓迎",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "5" : {
+    "title" : "グラフィックデザイナー",
+    "business_content" : "・広告（ポスター,チラシ,パンフレット）などの紙媒体のデザイン制作<br>・ノベルティ（ふせん紙、メモ帳、クリアファイル）などのデザイン制作<br>小売業のイベントチラシ、リフォーム会社の折込チラシ、住宅メーカーのチラシ･パンフレット、官公庁パンフレット・チラシ・ポスターなどの依頼を受けています。",
+    "employment_status" : "正社員",
+    "required_skills" : "イラストレーター・フォトショップ等の使用経験<br>普通自動車免許（AT限定可）",
+    "educational" : "高校卒以上<br>グラフィックデザイナー経験者",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "6" : {
+    "title" : "WEBプログラマー",
+    "business_content" : "・自社通販サイトのWEBプログラム開発<br>※能力や志向に応じて、業務内容を相談していきます。",
+    "employment_status" : "正社員",
+    "required_skills" : "mysql,php,linux<br>プログラム言語を用いた業務経験がある方優遇<br>普通自動車免許（AT限定可）",
+    "educational" : "高校卒以上<br>未経験者歓迎",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "7" : {
+    "title" : "WEBコーダー",
+    "business_content" : "自社ネット通販サイトのWEBサイトコーディング等",
+    "employment_status" : "正社員",
+    "required_skills" : "HTML,CSS,JavaScriptを用いたサイトコーディングの経験がある方<br>普通自動車免許（AT限定可）",
+    "educational" : "高校卒以上<br>サイトコーディングの経験者",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  },
+  "8" : {
+    "title" : "WEBデザイナー",
+    "business_content" : "自社ネット通販サイトのWEBサイトデザイン、コーディング。 <br>また、自社サイトの商品限定、マーケット分析、アクセス解析なども行って頂きます。",
+    "employment_status" : "正社員",
+    "required_skills" : "Photoshop・Illustratorの使用経験<br>WEBデザイナー経験者<br>普通自動車免許（AT限定可）",
+    "educational" : "高校卒以上<br>WEBデザイナー経験者",
+    "location" : "仙台市宮城野区新田",
+    "work_time" : "9：00～18：00",
+    "raising_bonus" : "昇給年１回<br>賞与年２回（前年度実績）",
+    "holiday" : "年間休日　115日<br>※GW・お盆休み・年末年始",
+    "welfare" : "社会保険完備<br>交通費支給（上限あり）"
+  }
+}

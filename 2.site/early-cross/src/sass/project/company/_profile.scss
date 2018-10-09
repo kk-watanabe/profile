@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	COMPANY - 会社概要
+------------------------------------------------------------*/
+/*-----p-location-----*/
+.p-location {
+	&__office {
+		font-weight: 500;
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+}
+
+/*-----p-location-----*/
+.p-profile {
+	&__link {
+		color: $is_color_wb03;
+		text-decoration: none;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-profile {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 800px;
+		&__link {
+			@include text_hover_anime01($is_color_wb05);
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+}
+
+/*-----p-jfec-----*/
+.p-jfec {
+	display: flex;
+	flex-wrap: wrap;
+	&__txt {
+		margin-right: 15px;
+		margin-bottom: 15px;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+}

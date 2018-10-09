@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	COMPANY - 代表挨拶
+------------------------------------------------------------*/
+/*-----p-ceo-----*/
+.p-ceo {
+	&__img {
+		position: relative;
+		&:after {
+			width: 100%;
+			height: 100%;
+			background-color: $is_color_wb02a5;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			content: "";
+		}
+	}
+	&__detail {
+		text-align: left;
+		&--name {
+			text-align: right;
+			line-height: 1.75;
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-ceo {
+		display: flex;
+		align-items: flex-start;
+		&__img,
+		&__detail {
+			width: 50%;
+		}
+		&__img {
+			margin-left: 20px;
+			order: 2;
+		}
+		&__detail {
+			margin-right: 20px;
+			order: 1;
+			&--catch {
+				font-size: 2.8rem;
+			}
+			&--txt {
+				margin-top: 25px;
+			}
+			&--name {
+				margin-top: 40px;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-ceo {
+		position: relative;
+		&__img {
+			background: url(/assets/img/company/ceo/photo.jpg) no-repeat;
+			background-size: cover;
+			&--photo {
+				display: none;
+			}
+		}
+		&__detail {
+			&--txt {
+				margin-top: 25px;
+			}
+			&--name {
+				margin-top: 40px;
+			}
+		}
+	}
+}
+
+
+// w651以上 ～ // w901以下
+@media only screen and (min-width: $pc_break_verticalonly_w) and (max-width: $sp_break_w) {
+	.p-ceo {
+		padding-top: 250px;
+		&__img {
+			width: 50%;
+			height: 250px;
+			background-position: center 25%;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		&__detail {
+			&--catch {
+				padding: 20px;
+				width: 50.1%;
+				height: 250px;
+				display: table;
+				position: absolute;
+				top: 0;
+				z-index: 1;
+				left: 0;
+				font-size: 2rem;
+				text-align: center;
+				&__in {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_verticalonly_w){
+	.p-ceo {
+		&__img {
+			width: 100%;
+			height: 200px;
+			background-position: center 25%;
+		}
+		&__detail {
+			margin-top: 25px;
+			&--catch {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}

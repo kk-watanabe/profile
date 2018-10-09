@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	COMPANY - アクセス
+------------------------------------------------------------*/
+/*-----p-access-----*/
+.p-access {
+	margin-top: 0;
+	&__ttl {
+		font-weight: 700;
+	}
+	&__transportation {
+		margin-top: 15px;
+		&--ttl {
+			color: $is_color_or01;
+			font-weight: 300;
+		}
+	}
+	&__map {
+		margin-top: 20px;
+		background-color: #ddd;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-access {
+		&__location {
+			margin-top: 50px;
+		}
+		&__ttl {
+			&.is-headOffice {
+				font-size: 2.4rem;
+			}
+			&:not(.is-headOffice) {
+				font-size: 2rem;
+			}
+		}
+		&__transportation {
+			&--ttl {
+				margin-right: 15px;
+			}
+		}
+		&__map {
+			&.is-main {
+				height: 500px;
+			}
+			&:not(.is-main) {
+				height: 350px;
+			}
+		}
+		&__column {
+			display: flex;
+		}
+		&__col {
+			flex: 1;
+			&:not(:first-child) {
+				margin-left: 40px;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-access {
+		&__location {
+			margin-top: 25px;
+		}
+		&__ttl {
+			&.is-headOffice {
+				font-size: 2rem;
+			}
+			&:not(.is-headOffice) {
+				font-size: 1.6rem;
+			}
+		}
+		&__transportation {
+			&--ttl {
+				display: block;
+			}
+		}
+		&__map {
+			height: 250px;
+		}
+	}
+}

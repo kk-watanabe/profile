@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	表示・非表示
+------------------------------------------------------------*/
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.u-hide__type--pc {
+		display: none;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.u-hide__type--sp {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: $sp_break_verticalonly_w){
+	.u-hide__type--sp__min {
+		display: none;
+	}
+}
+
+/*------------------------------------------------------------
+	画像hover
+------------------------------------------------------------*/
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.u-imgHover01 {
+		display: table;
+		background-color: #FFF;
+		img {
+			opacity: 1;
+			transition: opacity .3s ease;
+		}
+
+		&:hover {
+			img {
+				opacity: .5;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	改行CSS
+------------------------------------------------------------*/
+// 500px以上は非改行
+@media only screen and (min-width: $line_size06){
+	br.u-lineSize06 {
+		display: none;
+	}
+}
+
+// 700px以上は非改行
+@media only screen and (min-width: $line_size05){
+	br.u-lineSize05 {
+		display: none;
+	}
+}
+
+// 900px以上は非改行
+@media only screen and (min-width: $line_size04){
+	br.u-lineSize04 {
+		display: none;
+	}
+}
+
+// 1100px以上は非改行
+@media only screen and (min-width: $line_size03){
+	br.u-lineSize03 {
+		display: none;
+	}
+}
+
+// 1300px以上は非改行
+@media only screen and (min-width: $line_size02){
+	br.u-lineSize02 {
+		display: none;
+	}
+}
+
+
+// 1500px以上は非改行
+@media only screen and (min-width: $line_size01){
+	br.u-lineSize01 {
+		display: none;
+	}
+}

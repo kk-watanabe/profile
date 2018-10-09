@@ -1,0 +1,31 @@
+# == site maintenance ==
+# RewriteEngine On
+# RewriteCond %{REMOTE_ADDR} !=203.152.223.28
+# RewriteCond %{REQUEST_URI} !=/maintenance.php
+# RewriteCond %{REQUEST_URI} !\.css$
+# RewriteCond %{REQUEST_URI} !\.js$
+# RewriteCond %{REQUEST_URI} !\.jpg$
+# RewriteCond %{REQUEST_URI} !\.gif$
+# RewriteCond %{REQUEST_URI} !\.png$
+# RewriteCond %{REQUEST_URI} !\.swf$
+# RewriteRule ^.*$ /maintenance.php [L]
+
+# リダイレクト
+RewriteEngine on
+
+## wwwあり
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://www.early-cross.co.jp/$1 [R=301,L]
+
+## https対応
+#RewriteCond %{HTTP_HOST} ^(early-cross\.co\.jp)(:80)?
+#RewriteRule ^(.*) https://www.early-cross.co.jp/$1 [R=301,L]
+
+RewriteRule ^business.php$ /business/ [L,R=301]
+RewriteRule ^recruit.php$ /recruit/ [L,R=301]
+RewriteRule ^company.php$ /company/ [L,R=301]
+RewriteRule ^form/$ /contact/ [L,R=301]
+RewriteRule ^news.php$ /news/ [L,R=301]
+RewriteRule ^privacy.php$ /privacy/ [L,R=301]
+RewriteRule ^sitemap.php$ /sitemap/ [L,R=301]
+

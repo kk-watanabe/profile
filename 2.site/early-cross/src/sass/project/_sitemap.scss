@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	SITEMAP - サイトマップ
+------------------------------------------------------------*/
+.p-sitemap {
+	margin: 0 auto;
+	max-width: 800px;
+	text-align: left;
+	&__anchor {
+		border: 1px solid;
+		display: block;
+		color: $is_color_wb04;
+		text-decoration: none;
+	}
+	&__hover {
+		background-color: $is_color_wb01;
+		&.is-noLink {
+			background-color: $is_color_wb06;
+			pointer-events: none;
+		}
+	}
+	&__txt {
+		display: block;
+		position: relative;
+		&:before {
+			margin-top: -6px;
+			width: 12px;
+			height: 12px;
+			border-top: 1px solid $is_color_wb05;
+			border-right: 1px solid $is_color_wb05;
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			content: "";
+			transform: rotate(45deg);
+			transition: border-color .5s ease;
+		}
+	}
+	&__en {
+		font-weight: 700;
+		vertical-align: middle;
+	}
+	&__jp {
+		vertical-align: middle;
+	}
+	&__level {
+		&--anchor {
+			border: 1px solid;
+			display: block;
+			color: $is_color_wb04;
+			font-weight: 500;
+			text-decoration: none;
+		}
+		&--txt {
+			&:before,
+			&:after {
+				background-color: $is_color_wb04;
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-sitemap {
+		&__list {
+			&:not(:first-child) {
+				margin-top: 20px;
+			}
+		}
+		&__anchor {
+			padding: 15px;
+			border-color: $is_color_wb05;
+		}
+		&__hover {
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+			transform: translateY(0);
+			transition: .5s ease;
+			backface-visibility: hidden;
+		}
+		&__en {
+			font-size: 2rem;
+		}
+		&__jp {
+			margin-left: 15px;
+			font-size: 1.6rem;
+		}
+		&__level {
+			padding-left: 40px;
+			&--list {
+				margin-top: 20px;
+			}
+			&--anchor {
+				padding: 15px;
+				border-color: $is_color_wb05;
+				font-size: 1.6rem;
+			}
+		}
+
+		&__hover {
+			//hover
+			&:hover {
+				background-color: $is_color_or01;
+				box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+				border-color: $is_color_or01;
+				color: #FFF;
+				transform: translateY(-3%);
+
+				.p-sitemap__txt {
+					&:before {
+						border-color: $is_color_wb01;
+					}
+				}
+			}
+
+			//active
+			&:active {
+				box-shadow: 0 0 10px $is_color_wb02a0;
+				transform: translateY(0);
+				transition-duration : .1s;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-sitemap {
+		&__list {
+			&:not(:first-child) {
+				margin-top: 10px;
+			}
+		}
+		&__anchor {
+			padding: 10px;
+			border-color: $is_color_wb06;
+		}
+		&__hover {
+			&:not(.is-noLink) {
+				box-shadow: 0 2px 5px $is_color_wb02a1;
+			}
+		}
+		&__en {
+			font-size: 1.6rem;
+		}
+		&__jp {
+			margin-left: 10px;
+		}
+		&__level {
+			padding-left: 20px;
+			&--anchor {
+				padding: 10px;
+				border-color: $is_color_wb06;
+				color: $is_color_wb04;
+			}
+			&--list {
+				margin-top: 10px;
+			}
+			&--txt {
+				&:before,
+				&:after {
+					background-color: $is_color_wb04;
+				}
+			}
+		}
+	}
+}

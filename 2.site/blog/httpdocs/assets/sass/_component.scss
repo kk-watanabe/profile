@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	clearfix（float解除）
+------------------------------------------------------------*/
+.cf {
+	*zoom: 1;
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
+/*------------------------------------------------------------
+	c-headline
+------------------------------------------------------------*/
+.c-headline01 {
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-headline01 {
+		margin-bottom: 40px;
+		font-size: 3.6rem;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-headline01 {
+		margin-bottom: 30px;
+		font-size: 2.4rem;
+	}
+}
+
+
+/*------------------------------------------------------------
+	c-ttl
+------------------------------------------------------------*/
+.c-ttl01 {
+	position: relative;
+	color: $blue01;
+	font-weight: 500;
+	line-height: 1.5;
+	&:before {
+		background-color: $blue01;
+		position: absolute;
+		left: 0;
+		content: "";
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-ttl01 {
+		margin-left: -30px;
+		margin-bottom: 20px;
+		padding-left: 30px;
+		font-size: 3rem;
+		&:before {
+			width: 25px;
+			height: 5px;
+			top: 22px;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-ttl01 {
+		margin-left: -15px;
+		margin-bottom: 20px;
+		padding-left: 15px;
+		font-size: 2.2rem;
+		&:before {
+			width: 10px;
+			height: 2px;
+			top: 18px;
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	c-box
+------------------------------------------------------------*/
+.c-box01 {
+	margin: 0 auto;
+	background-color: #FFF;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-box01 {
+		padding: 20px 30px;
+		max-width: $detail_w;
+		border-radius: 4px;
+		&:not(:first-child) {
+			margin-top: 60px;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-box01 {
+		padding: 10px 15px;
+		&:not(:first-child) {
+			margin-top: 30px;
+		}
+	}
+}
+
+.c-list_box01 {
+	margin: 0 auto;
+	padding-right: 20px;
+	padding-left: 20px;
+	max-width: $max_width;
+}
+
+/*------------------------------------------------------------
+	c-btn
+------------------------------------------------------------*/
+.c-btn01 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	background-color: #FFF;
+	border: 1px solid $gray05;
+	display: table;
+	color: $gray08;
+	line-height: 1;
+	text-align: center;
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+	&__txt {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.is-prev {
+	.c-btn01 {
+		&__txt {
+			padding-left: 15px;
+			&:before {
+				width: 8px;
+				height: 8px;
+				border-top: 1px solid $gray08;
+				border-left: 1px solid $gray08;
+				position: absolute;
+				top: 50%;
+				left: 6px;
+				content: "";
+				transform: rotate(-45deg) translateY(-50%);
+				transition: border-top-color 500ms ease, border-left-color 500ms ease;
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-btn01 {
+		margin-top: 40px;
+		padding: 15px;
+		max-width: 250px;
+		position: relative;
+		transition: color 500ms ease;
+		&:after {
+			width: 0;
+			height: 100%;
+			background-color: #333;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			content: "";
+			transition: width 500ms ease;
+		}
+
+		&:hover {
+			color: #FFF;
+			&:after {
+				width: 100%;
+			}
+			.c-btn01__txt {
+				&:before {
+					border-top-color: #fff;
+					border-left-color: #fff;
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-btn01 {
+		margin-top: 25px;
+		padding: 15px;
+		min-width: 250px;
+		position: relative;
+	}
+}
+
+/*------------------------------------------------------------
+	c-group_navi
+------------------------------------------------------------*/
+.c-group_navi01 {
+	&--list {
+		border-bottom: 1px solid rgba(0, 0, 0, 0);
+	}
+	&--anc {
+		height: 100%;
+		background-color: #FFF;
+		display: block;
+		position: relative;
+		color: $blue01;
+		font-size: 1.4rem;
+		transition: color 500ms ease, background-color 500ms ease;
+		&:after {
+			width: 7px;
+			height: 7px;
+			border-top: 1px solid $blue01;
+			border-right: 1px solid $blue01;
+			position: absolute;
+			top: 50%;
+			content: "";
+			transform: translateY(-50%) rotate(45deg);
+			transition: border-color 500ms ease;
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-group_navi01 {
+		display: flex;
+		flex-wrap: wrap;
+		&--list {
+			width: calc(100% / 3);
+			&:not(:nth-child(3n+1)) {
+				border-left: 1px solid rgba(0, 0, 0, 0);
+			}
+		}
+		&--anc {
+			padding: 15px 45px 15px 15px;
+			&:after {
+				right: 15px;
+			}
+			&:hover {
+				background-color: $blue03;
+				color: #FFF;
+				text-decoration: none;
+				&:after {
+					border-top-color: #fff;
+					border-right-color: #fff;
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-group_navi01 {
+		&--anc {
+			padding: 10px 25px 10px 10px;
+			&:after {
+				right: 10px;
+			}
+		}
+	}
+}

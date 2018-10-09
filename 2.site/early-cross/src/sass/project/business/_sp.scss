@@ -1,0 +1,431 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	BUSINESS - SP事業
+------------------------------------------------------------*/
+/*-----p-spContents-----*/
+.p-spContents {
+	&__summary {
+		display: flex;
+		flex-wrap: wrap;
+		&--img {
+			position: relative;
+		}
+		&--detail {
+			background-color: $is_color_wb02a8;
+		}
+		&--txt {
+			color: $is_color_wb01;
+		}
+		&--other {
+			width: 100%;
+			height: 100%;
+			background-color: $is_color_wb09;
+			text-align: left;
+			&__ttl {
+				font-weight: 500;
+			}
+			&__txt {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-spContents {
+		margin-top: 80px;
+		&__tool {
+			& + * {
+				margin-top: 100px;
+			}
+		}
+
+		&__summary {
+			margin-left: -30px;
+			&--list {
+				margin-top: 30px;
+				padding-left: 30px;
+				width: 33.3%;
+			}
+			&--detail {
+				width: calc(100% - 20px);
+				height: calc(100% - 20px);
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				left: 50%;
+				animation: content_txt_hoer_out .5s 1 ease forwards;
+			}
+			&--txt {
+				display: table;
+				position: absolute;
+				z-index: 1;
+				@include all_center01;
+				font-size: 1.6rem;
+			}
+			&--other {
+				padding: 30px;
+				font-size: 1.6rem;
+			}
+
+			//hover
+			&--img:hover {
+				.p-spContents__summary--detail {
+					animation: content_txt_hoer .5s 1 ease forwards;
+				}
+			}
+		}
+
+		&__txt {
+			margin-right: auto;
+			margin-left: auto;
+			max-width: 650px;
+		}
+	}
+}
+
+// w900以下
+@media only screen and (max-width: $sp_break_w){
+	.p-spContents {
+		margin-top: 50px;
+		&__tool {
+			& + * {
+				margin-top: 40px;
+			}
+		}
+
+		&__summary {
+			margin-left: -20px;
+			&--list {
+				margin-top: 20px;
+				padding-left: 20px;
+				width: 50%;
+				&.is-other {
+					width: 100%;
+				}
+			}
+			&--img {
+				&__photo {
+					width: 100%;
+				}
+			}
+			&--detail {
+				padding: 10px;
+				width: 100%;
+			}
+			&--txt {
+				text-align: center;
+			}
+
+			&--other {
+				padding: 30px;
+			}
+		}
+	}
+}
+
+// w651以上 ～ // w901以下
+@media only screen and (min-width: $pc_break_verticalonly_w) and (max-width: $sp_break_w) {
+	.p-spContents {
+		&__summary {
+			&--detail {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+}
+
+// w650以下
+@media only screen and (max-width: $sp_break_verticalonly_w){
+	.p-spContents {
+		&__summary {
+			&--detail {
+				height: 60px;
+				display: table;
+				font-size: 1.2rem;
+			}
+			&--txt {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+@keyframes content_txt_hoer {
+	0% {
+		opacity: 0;
+		transform: translate(-40%, -40%);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes content_txt_hoer_out {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-60%, -60%);
+	}
+}
+
+/*-----p-strength-----*/
+.p-strength {
+	background: url(/assets/img/common/bg/bg01.png);
+	border-top: 1px solid $is_color_wb06;
+	border-bottom: 1px solid $is_color_wb06;
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	&__ttl {
+		width: 100%;
+		order: 2;
+		color: $is_color_or01;
+		font-weight: 400;
+	}
+	&__img {
+		width: 100%;
+		background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%);
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 60%);
+		background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 60%);
+		border: 1px solid $is_color_wb06;
+		border-radius: 100%;
+		display: block;
+		position: relative;
+		order: 1;
+		&--icon {
+			position: absolute;
+			@include all_center01;
+			fill: $is_color_or02;
+		}
+	}
+	&__txt {
+		margin-top: 15px;
+		width: 100%;
+		order: 3;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-strength {
+		margin-top: 100px;
+		margin-right: -40px;
+		margin-left: -40px;
+		padding-top: 80px;
+		padding-bottom: 100px;
+		&__in {
+			margin-top: 40px;
+			@include flex_center;
+		}
+		&__item {
+			margin: 0 -10px;
+			width: calc(100% / 3);
+			max-width: 300px;
+		}
+		&__img {
+			height: 300px;
+		}
+		&__ttl {
+			margin-top: 15px;
+			font-size: 1.6rem;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-strength {
+		margin-top: 50px;
+		margin-right: -20px;
+		margin-left: -20px;
+		padding: 40px 20px 50px;
+		&__item {
+			margin: 25px auto 0;
+			width: 100%;
+			max-width: 250px;
+		}
+		&__img {
+			height: 250px;
+			&--icon {
+				width: 100px;
+				height: auto;
+			}
+		}
+		&__ttl {
+			margin-top: 15px;
+		}
+	}
+}
+
+/*-----p-productionFlow-----*/
+.p-productionFlow {
+	&__in {
+		position: relative;
+		text-align: left;
+	}
+	&__line {
+		background: rgb(237,49,0);
+		background: -moz-linear-gradient(top, rgba(237,49,0,1) 0%, rgba(237,148,0,1) 100%);
+		background: -webkit-linear-gradient(top, rgba(237,49,0,1) 0%,rgba(237,148,0,1) 100%);
+		background: linear-gradient(to bottom, rgba(237,49,0,1) 0%,rgba(237,148,0,1) 100%);
+		position: absolute;
+		top: 0;
+		z-index: 0;
+	}
+	&__step {
+		position: relative;
+		z-index: 1;
+	}
+	&__ttl {
+		font-weight: 400;
+	}
+	&__icon {
+		background-color: #EEE;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $is_color_wb01;
+		font-weight: 500;
+		line-height: 1;
+		text-align: center;
+	}
+	&__num {
+		margin-top: 5px;
+		display: block;
+	}
+	&__detail {
+		margin-top: 10px;
+	}
+	&__txt {
+		line-height: 1.75;
+		& + * {
+			margin-top: 15px;
+		}
+	}
+
+	//色
+	&__step {
+		&:first-child {
+			.p-productionFlow__icon { background-color: #ed3100; }
+		}
+		&:nth-child(2) {
+			.p-productionFlow__icon { background-color: #ed4400; }
+		}
+		&:nth-child(3) {
+			.p-productionFlow__icon { background-color: #ed5800; }
+		}
+		&:nth-child(4) {
+			.p-productionFlow__icon { background-color: #ed6c00; }
+		}
+		&:nth-child(5) {
+			.p-productionFlow__icon { background-color: #ed8000; }
+		}
+		&:nth-child(6) {
+			.p-productionFlow__icon { background-color: #ed9400; }
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-productionFlow {
+		margin-top: 80px;
+		&__in {
+			margin-top: 50px;
+		}
+		&__line {
+			margin: auto;
+			width: 5px;
+			height: 90%;
+			bottom: 0;
+			left: 58px;
+		}
+		&__step {
+			padding-top: 20px;
+			padding-bottom: 25px;
+			padding-left: 160px;
+			&:not(:first-child) {
+				margin-top: 50px;
+			}
+		}
+		&__ttl {
+			font-size: 1.8rem;
+		}
+		&__icon {
+			padding-top: 30px;
+			width: 120px;
+			height: 120px;
+			border-radius: 100%;
+			font-size: 1.6rem;
+		}
+		&__num {
+			font-size: 3.6rem;
+		}
+
+		& + * {
+			margin-top: 50px;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-productionFlow {
+		margin-top: 40px;
+		&__in {
+			margin-top: 45px;
+		}
+		&__line {
+			width: 3px;
+			height: 90%;
+			left: 50px;
+		}
+		&__step {
+			padding-top: 10px;
+			padding-bottom: 25px;
+			padding-left: 65px;
+		}
+		&__ttl {
+			font-size: 1.6rem;
+		}
+		&__icon {
+			padding-top: 18px;
+			width: 50px;
+			height: 100%;
+			font-size: 1.4rem;
+		}
+		&__num {
+			font-size: 2.5rem;
+		}
+
+		& + * {
+			margin-top: 30px;
+		}
+	}
+}
+
+/*-----p-spContact-----*/
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-spContact {
+		margin-right: auto;
+		margin-left: auto;
+		width: 400px;
+		border-radius: 100%;
+		overflow: hidden;
+		.l-contactGuide__telTxt {
+			display: none;
+		}
+	}
+}

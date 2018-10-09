@@ -1,0 +1,1238 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	headline
+------------------------------------------------------------*/
+/*-----c-headline01-----*/
+.c-headline01 {
+	position: relative;
+	background: no-repeat top center;
+	&__in {
+		height: 100%;
+		background-color: $is_color_wb02a5;
+		position: relative;
+	}
+	&__ttl {
+		position: absolute;
+		left: 50%;
+		color: $is_color_wb01;
+		transform: translate(-50%, -50%);
+		&--main {
+			display: block;
+			font-weight: 700;
+			line-height: 1.3;
+		}
+		&--sub {
+			display: block;
+			font-weight: 500;
+		}
+	}
+
+	//通常
+	background-image: url(/assets/img/common/bg/headline01.jpg);
+
+	//business
+	&.is-business {
+		background-image: url(/assets/img/business/index/bg_headline.jpg);
+	}
+	//company
+	&.is-company {
+		background-image: url(/assets/img/company/common/bg_headline.jpg);
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-headline01 {
+		height: 500px;
+		background-size: 2000px auto;
+		background-attachment: fixed;
+		&__ttl {
+			top: 55%;
+			&--main {
+				font-size: 4.5rem;
+			}
+			&--sub {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-headline01 {
+		height: 250px;
+		background-size: cover;
+		&__ttl {
+			top: 60%;
+			&--main {
+				font-size: 3rem;
+			}
+			&--sub {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	title
+------------------------------------------------------------*/
+/*-----c-ttl01-----*/
+.c-ttl01 {
+	&__main {
+		font-weight: 700;
+		line-height: 1.3;
+	}
+	&__sub {
+		display: block;
+		font-weight: 400;
+	}
+
+	&:not(.is-black) {
+		color: $is_color_or01;
+	}
+
+	&.is-black {
+		color: $is_color_wb07;
+	}
+	&.is-white01 {
+		color: $is_color_wb01;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-ttl01 {
+		&__main {
+			font-size: 3.6rem;
+		}
+		&__sub {
+			font-size: 1.8rem;
+		}
+
+		&:not(.is-black) {
+			& + * {
+				margin-top: 50px;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-ttl01 {
+		&__main {
+			font-size: 2.4rem;
+		}
+		&__sub {
+			font-size: 1.6rem;
+		}
+
+		&:not(.is-black) {
+			& + * {
+				margin-top: 25px;
+			}
+		}
+	}
+}
+
+/*-----c-ttl02-----*/
+.c-ttl02 {
+	position: relative;
+	font-weight: 500;
+	text-align: left;
+	&:after {
+		margin-top: 10px;
+		width: 30px;
+		height: 2px;
+		background-color: $is_color_or01;
+		display: block;
+		content: "";
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-ttl02 {
+		font-size: 2.4rem;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-ttl02 {
+		font-size: 1.8rem;
+	}
+}
+
+/*------------------------------------------------------------
+	contsFix
+------------------------------------------------------------*/
+/*-----c-contsFix01-----*/
+.c-contsFix01 {
+	@include conts_center;
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+}
+
+/*------------------------------------------------------------
+	figure
+------------------------------------------------------------*/
+/*-----c-figure01-----*/
+.c-figure01 {
+	text-align: center;
+	> * {
+		margin: 0 auto;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-figure01 {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-figure01 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+/*------------------------------------------------------------
+	sentence
+------------------------------------------------------------*/
+/*-----c-sentence01-----*/
+.c-sentence01 {
+	line-height: 2;
+	&__txt {
+	}
+
+	@include anchor_setting01;
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-sentence01 {
+		&__txt {
+			&:not(:first-child) {
+				margin-top: 25px;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-sentence01 {
+		&__txt {
+			&:not(:first-child) {
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+
+// SP用(縦持ち想定)
+@media only screen and (max-width: $sp_break_verticalonly_w){
+	.c-sentence01 {
+		text-align: left;
+	}
+}
+
+/*------------------------------------------------------------
+	btn
+------------------------------------------------------------*/
+/*-----c-btn-----*/
+.c-btn01,
+.c-btn02 {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 15px;
+	width: 100%;
+	border: 1px solid;
+	display: table;
+	position: relative;
+	line-height: 1;
+	text-decoration: none;
+	&__txt {
+		display: block;
+		position: relative;
+		z-index: 1;
+		&:before,
+		&:after {
+			position: absolute;
+			content: "";
+			transition: background-color .3s ease;
+		}
+	}
+}
+
+.c-btn01 {
+	&__txt {
+		&:before,
+		&:after {
+			right: 0;
+			content: "";
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.c-btn02 {
+	&__txt {
+		&:before,
+		&:after {
+			left: 0;
+			content: "";
+		}
+		&:before {
+			transform: rotate(-45deg);
+		}
+		&:after {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-btn01,
+	.c-btn02 {
+		background-color: $is_color_wb01;
+		border-color: $is_color_wb06;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+		top: 0;
+		color: $is_color_wb04;
+		font-size: 1.6rem;
+		transition: top .2s ease, border-color .3s ease, box-shadow .3s ease;
+		&:after {
+			width: 0;
+			height: 100%;
+			background-color: $is_color_or01;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			content: "";
+			transition: width .2s ease;
+		}
+		&__txt {
+			padding: 0 15px;
+			&:before,
+			&:after {
+				width: 17px;
+				height: 4px;
+				background-color: $is_color_wb06;
+			}
+			&:before {
+				top: 2px;
+			}
+			&:after {
+				bottom: 1px;
+			}
+		}
+
+		//サイズ
+		&.is-w300 {
+			width: 300px;
+		}
+		&.is-w450 {
+			width: 450px;
+		}
+
+		//hover
+		&:hover {
+			box-shadow: 0 2px 20px $is_color_wb02a3;
+			border-color: $is_color_or01;
+			color: $is_color_wb01;
+			top: -3px;
+
+			&:after {
+				width: 100%;
+			}
+
+			.c-btn01__txt,
+			.c-btn02__txt {
+				&:before,
+				&:after {
+					background-color: $is_color_wb01;
+				}
+			}
+		}
+
+		//active
+		&:active {
+			box-shadow: 0 2px 10px $is_color_wb02a0;
+			top: 0;
+			transition-duration : .1s;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-btn01,
+	.c-btn02 {
+		width: 100%;
+		background-color: $is_color_wb01;
+		border-color: $is_color_wb06;
+		box-shadow: 0 2px 2px $is_color_wb02a2;
+		color: $is_color_wb04;
+		&__txt {
+			padding: 0 15px;
+			&:before,
+			&:after {
+				width: 14px;
+				height: 3px;
+				background-color: $is_color_wb04;
+			}
+			&:before {
+				top: 2px;
+			}
+			&:after {
+				bottom: 1px;
+			}
+		}
+	}
+}
+
+/*-----c-btnIcon01-----*/
+.c-btnIcon01 {
+	&__contact01 {
+		position: relative;
+		&--icon {
+			padding: 1px;
+			background-color: $is_color_wb06;
+			position: absolute;
+			top: 50%;
+			z-index: 2;
+			fill: $is_color_wb01;
+			transform: translateY(-50%);
+			transition: background-color .2s ease;
+		}
+	}
+
+	&__tel01 {
+		position: relative;
+		&--icon {
+			position: absolute;
+			top: 50%;
+			z-index: 2;
+			fill: $is_color_wb06;
+			transform: translateY(-50%);
+			transition: background-color .2s ease;
+		}
+	}
+	&__pdf01 {
+		position: relative;
+		&--icon {
+			position: absolute;
+			top: 50%;
+			z-index: 2;
+			fill: $is_color_wb05;
+			transform: translateY(-50%);
+			transition: background-color .2s ease;
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-btnIcon01 {
+		&__contact01 {
+			&--icon {
+				left: 15px;
+			}
+
+			&:hover {
+				.c-btnIcon01__contact01--icon {
+					background-color: $is_color_or01;
+				}
+			}
+		}
+
+		&__tel01 {
+			&--icon {
+				left: 15px;
+			}
+
+			&:hover {
+				.c-btnIcon01__contact01--icon {
+					fill: $is_color_or01;
+				}
+			}
+		}
+
+		&__pdf01 {
+			&--icon {
+				left: 15px;
+			}
+
+			&:hover {
+				.c-btnIcon01__pdf01--icon {
+					fill: $is_color_wb01;
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-btnIcon01 {
+		&__contact01 {
+			background-color: $is_color_or01;
+			border-color: $is_color_or01;
+			color: $is_color_wb01;
+			&--txt {
+				&:before,
+				&:after {
+					background-color: $is_color_wb01;
+				}
+			}
+			&--icon {
+				background-color: $is_color_or01;
+				left: 15px;
+			}
+		}
+		&__tel01,
+		&__pdf01 {
+			&--icon {
+				left: 15px;
+			}
+		}
+	}
+}
+
+
+/*------------------------------------------------------------
+	table
+------------------------------------------------------------*/
+/*-----c-table01-----*/
+.c-table01 {
+	text-align: left;
+	&__row {
+		width: 100%;
+		border-bottom: 1px solid $is_color_wb08;
+		&:first-child {
+			border-top: 1px solid $is_color_wb08;
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-table01 {
+		&__row {
+			display: table;
+		}
+		&__cell {
+			padding: 20px 0;
+			display: table-cell;
+		}
+
+		//サイズ
+		&.is-w15-85 {
+			.c-table01__cell {
+				&.is-th {
+					width: 15%;
+				}
+			}
+		}
+		&.is-w20-80 {
+			.c-table01__cell {
+				&.is-th {
+					width: 20%;
+				}
+			}
+		}
+		&.is-w25-75 {
+			.c-table01__cell {
+				&.is-th {
+					width: 25%;
+				}
+			}
+		}
+
+		//上揃え
+		&.is-vtop {
+			.c-table01__cell {
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-table01 {
+		&__row {
+			display: table;
+		}
+		&__cell {
+			padding: 15px;
+			&.is-th {
+				background-color: $is_color_wb09;
+				border-bottom: 1px solid $is_color_wb08;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	list
+------------------------------------------------------------*/
+/*-----c-numList01-----*/
+.c-numList01 {
+	counter-reset: numList01;
+	&__list {
+		&:not(:first-child) {
+			margin-top: 5px;
+		}
+		&:before {
+			color: $is_color_or01;
+			font-weight: 300;
+			counter-increment: numList01;
+			content: counter(numList01)". ";
+		}
+	}
+}
+
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-numList01 {
+		margin-top: 25px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-numList01 {
+		margin-top: 15px;
+	}
+}
+
+/*------------------------------------------------------------
+	pageNavi
+------------------------------------------------------------*/
+/*-----c-pageNavi-----*/
+.c-pageNavi {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	text-align: center;
+	&__list {
+		background: no-repeat center;
+		background-size: cover;
+
+		//背景画像
+		//top
+		&.is-bg-company {
+			background-image: url(/assets/img/index/bg_company01.jpg);
+		}
+		&.is-bg-recruit {
+			background-image: url(/assets/img/index/bg_recruit01.jpg);
+		}
+
+		//business
+		&.is-bg-ec {
+			background-image: url(/assets/img/common/bg/business_ec01.jpg);
+		}
+		&.is-bg-sp {
+			background-image: url(/assets/img/common/bg/business_sp01.jpg);
+		}
+
+		//company
+		&.is-bg-ceo {
+			background-image: url(/assets/img/company/common/ceo.jpg);
+		}
+		&.is-bg-profile {
+			background-image: url(/assets/img/company/common/profile.jpg);
+		}
+		&.is-bg-access {
+			background-image: url(/assets/img/company/common/access.jpg);
+		}
+		&.is-bg-organization {
+			background-image: url(/assets/img/company/common/organization.jpg);
+		}
+		&.is-bg-history {
+			background-image: url(/assets/img/company/common/history.jpg);
+		}
+		&.is-bg-customer {
+			background-image: url(/assets/img/company/common/customer.jpg);
+		}
+	}
+	&__anchor {
+		height: 100%;
+		background-color: $is_color_wb02a5;
+		display: block;
+		position: relative;
+		color: $is_color_wb01;
+		text-decoration: none;
+	}
+	&__in {
+		width: 100%;
+		position: absolute;
+		@include all_center01;
+	}
+	&__ttl {
+		font-weight: 700;
+	}
+	&__txt {
+		font-weight: 200;
+		line-height: 1.75;
+	}
+	&__line {
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
+		position: absolute;
+		@include all_center01;
+		z-index: 1;
+		&:before,
+		&:after {
+			opacity: 1;
+			background-color: $is_color_wb01;
+			position: absolute;
+			z-index: 0;
+			content: "";
+		}
+
+		//上下のライン
+		&.is-tb {
+			&:before,
+			&:after {
+				width: 0;
+				height: 1px;
+				transition: width .3s ease, opacity .5s ease;
+			}
+			&:before {
+				top: 0;
+				left: 0;
+			}
+			&:after {
+				right: 0;
+				bottom: 0;
+			}
+		}
+
+		//左右のライン
+		&.is-lr {
+			&:before,
+			&:after {
+				width: 1px;
+				height: 0;
+				transition: height .3s ease, opacity .5s ease;
+			}
+			&:before {
+				top: 0;
+				right: 0;
+			}
+			&:after {
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+
+	//囲みがあった時
+	&Warp {
+		border-top: 1px solid $is_color_wb08;
+	}
+
+	//current
+	&__anchor.is-current {
+		background-color: $is_color_wb02a7;
+		pointer-events: none;
+		.c-pageNavi__line {
+			//上下のライン
+			&.is-tb {
+				&:before,
+				&:after {
+					width: 100%;
+				}
+			}
+
+			//左右のライン
+			&.is-lr {
+				&:before,
+				&:after {
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+
+// w1200以上
+@media only screen and (min-width: $pc_break_max_w ){
+	.c-pageNavi {
+		&__ttl {
+			font-size: 2.8rem;
+		}
+	}
+}
+
+// w901以上 ～ // w1200以下
+@media only screen and (min-width: $pc_break_w) and (max-width: $pc_break_max_w) {
+	.c-pageNavi {
+		&__ttl {
+			font-size: 2.4rem;
+		}
+	}
+}
+
+
+// w901以上
+@media only screen and (min-width: $pc_break_w ){
+	.c-pageNavi {
+		padding-top: 50px;
+		&__list {
+			//サイズ
+			&.is-col2 {
+				height: 400px;
+			}
+			&.is-col3 {
+				height: 300px;
+			}
+		}
+		&__anchor {
+			transition: background-color .3s ease;
+		}
+		&__in {
+			margin-top: -10px;
+			padding: 20px;
+		}
+		&__txt {
+			margin-top: 15px;
+			font-size: 1.4rem;
+		}
+
+		//hover
+		&__anchor:hover {
+			background-color: $is_color_wb02a7;
+			.c-pageNavi__line {
+				//上下のライン
+				&.is-tb {
+					&:before,
+					&:after {
+						width: 100%;
+						opacity: 0;
+					}
+				}
+
+				//左右のライン
+				&.is-lr {
+					&:before,
+					&:after {
+						height: 100%;
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		//囲みがあった時
+		&Warp {
+			padding: 30px 40px 80px;
+		}
+	}
+}
+
+// w651以上 ～ // w901以下
+@media only screen and (min-width: $pc_break_verticalonly_w) and (max-width: $sp_break_w) {
+	.c-pageNavi {
+		padding-top: 30px;
+		&__list {
+			height: 200px;
+		}
+		&__ttl {
+			font-size: 1.8rem;
+		}
+		&__txt {
+			display: none;
+		}
+
+		//囲みがあった時
+		&Warp {
+			padding: 10px 20px 40px;
+		}
+	}
+
+	//PCデバイスであればhover
+	.pc_device {
+		.c-pageNavi {
+			//hover
+			&__anchor:hover {
+				background-color: $is_color_wb02a8;
+				.c-pageNavi__line {
+					//上下のライン
+					&.is-tb {
+						&:before,
+						&:after {
+							width: 100%;
+							opacity: 0;
+						}
+					}
+
+					//左右のライン
+					&.is-lr {
+						&:before,
+						&:after {
+							height: 100%;
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// w651以上
+@media only screen and (min-width: $pc_break_verticalonly_w){
+	.c-pageNavi {
+		&__list {
+			//サイズ
+			&.is-col2 {
+				width: 50%;
+			}
+			&.is-col3 {
+				width: 33.333333%;
+			}
+		}
+	}
+}
+
+// w651以下
+@media only screen and (max-width: $sp_break_verticalonly_w){
+	.c-pageNavi {
+		padding-top: 25px;
+		&__list {
+			width: 50%;
+			height: 150px;
+		}
+		&__ttl {
+			font-size: 1.8rem;
+		}
+		&__txt {
+			display: none;
+		}
+
+		//囲みがあった時
+		&Warp {
+			padding: 10px 20px 40px;
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	newsList
+------------------------------------------------------------*/
+.c-newsList {
+	background-color: $is_color_wb01;
+	text-align: left;
+	&__anchor {
+		width: 100%;
+		position: relative;
+		color: $is_color_wb03;
+		text-decoration: none;
+	}
+	&__time {
+		color: $is_color_or01;
+		font-weight: normal;
+	}
+	&__txt {
+		width: 100%;
+		max-width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	&__icon {
+		background-color: $is_color_red01;
+		position: absolute;
+		color: $is_color_wb01;
+	}
+}
+
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-newsList {
+		border-top: 1px solid $is_color_wb08;
+		&__list {
+			border-bottom: 1px solid $is_color_wb08;
+		}
+		&__anchor {
+			padding-right: 45px;
+			display: table;
+			table-layout: fixed;
+			cursor: text;
+		}
+		&__time,
+		&__box {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		&__time {
+			padding-right: 25px;
+			padding-left: 10px;
+			width: 115px;
+		}
+		&__txt {
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&__icon {
+			margin-top: -9px;
+			padding: 0 2px;
+			top: 50%;
+			right: 10px;
+			font-size: 1.2rem;
+		}
+	}
+
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-newsList {
+		border-top: 1px solid $is_color_wb08;
+		&__list {
+			border: 1px solid $is_color_wb08;
+			border-top: none;
+		}
+		&__anchor {
+			padding: 15px;
+			padding-right: 45px;
+			display: block;
+			overflow: hidden;
+			&:after {
+				margin-top: -5px;
+				width: 10px;
+				height: 10px;
+				border-top: 1px solid $is_color_wb05;
+				border-right: 1px solid $is_color_wb05;
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				content: "";
+				transform: rotate(45deg);
+			}
+		}
+		&__time {
+			margin-bottom: 5px;
+		}
+		&__icon {
+			padding-top: 25px;
+			width: 80px;
+			position: absolute;
+			top: -17px;
+			right: -35px;
+			font-size: 1rem;
+			text-align: center;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	itemList01
+------------------------------------------------------------*/
+/*-----c-itemList01-----*/
+.c-itemList01 {
+	display: flex;
+	flex-wrap: wrap;
+	&__anchor {
+		padding-top: 100%;
+		background-color: $is_color_wb09;
+		display: block;
+		position: relative;
+		overflow: hidden;
+		color: $is_color_wb01;
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		@include flex_center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		&--photo {
+			max-height: 100%;
+		}
+	}
+
+	&__popup {
+		background-color: #FFF;
+		@include cf;
+		&--slide {
+			float: left;
+		}
+
+		.slick-arrow {
+			margin-top: -30px;
+			width: 60px;
+			height: 60px;
+			background-color: transparent;
+			position: absolute;
+			top: 50%;
+			z-index: 100;
+			text-indent: -9999px;
+			&:before {
+				margin-top: -12px;
+				margin-left: -12px;
+				width: 25px;
+				height: 25px;
+				border-top: 5px solid $is_color_wb06;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				content: "";
+				transition: border-color .5s ease;
+			}
+			&:hover {
+				&:before {
+					border-color: $is_color_or01;
+				}
+			}
+		}
+		.slick-prev {
+			left: 0;
+			&:before {
+				border-left: 5px solid $is_color_wb06;
+				transform: rotate(-45deg);
+			}
+		}
+		.slick-next {
+			right: 0;
+			&:before {
+				border-right: 5px solid $is_color_wb06;
+				transform: rotate(45deg);
+			}
+		}
+
+		.slick-dots {
+			width: 100%;
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			text-align: center;
+			letter-spacing: -0.4em;
+			li {
+				margin: 0 10px;
+				display: inline-block;
+				letter-spacing: normal;
+			}
+			button {
+				width: 10px;
+				height: 10px;
+				background-color: $is_color_wb06;
+				border-radius: 100%;
+				text-indent: -9999px;
+				transition: background-color .5s ease;
+			}
+
+			.slick-active button,
+			button:hover {
+				background-color: $is_color_or01;
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.c-itemList01 {
+		margin-top: 50px;
+		&__list {
+			width: calc(100% / 4);
+		}
+		&__anchor {
+			&:after {
+				width: 100%;
+				height: 100%;
+				background-color: $is_color_wb02a5;
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				content: "";
+				transition: opacity .5s ease;
+			}
+		}
+		&__img {
+			transform: scale(1);
+			transition: transform 5s ease;
+		}
+
+		//hover
+		&__anchor:hover {
+			&:after {
+				opacity: 1;
+			}
+			.c-itemList01__img {
+				transform: scale(1.5);
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.c-itemList01 {
+		margin-top: 25px;
+		margin-left: -3px;
+		&__list {
+			padding-bottom: 3px;
+			padding-left: 3px;
+			width: calc(100% / 2);
+		}
+		&__img {
+			border: 1px solid $is_color_wb06;
+			&--photo {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------
+	大タイトル
+------------------------------------------------------------*/
+/*-----小タイトル-----*/
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+}
+

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	Webフォントに使用するものをまとめる
+------------------------------------------------------------*/
+//源ノ角ゴシック
+.is-shs-jp {
+	font-family: $ff_shs-jp;
+}
+
+//源ノ明朝
+.is-shs-jp-min {
+	font-family: $ff_shs-jp-min;
+}
+
+//Roboto
+.is-roboto {
+	font-family: $ff_roboto;
+}
+
+//Roboto Condensed
+.is-roboto-c {
+	font-family: $ff_roboto-c;
+}

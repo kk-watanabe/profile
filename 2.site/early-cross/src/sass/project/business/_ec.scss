@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	BUSINESS - EC事業
+------------------------------------------------------------*/
+/*-----p-ecSite-----*/
+.p-ecSite {
+	&__cate {
+		text-align: left;
+	}
+	&__summary {
+		display: flex;
+		flex-wrap: wrap;
+		&--anchor {
+			display: block;
+			position: relative;
+			color: $is_color_wb03;
+			text-decoration: none;
+		}
+		&--frame {
+			background-color: $is_color_wb01;
+			position: relative;
+			z-index: 0;
+			backface-visibility: hidden;
+		}
+		&--img {
+			border: 1px solid $is_color_wb08;
+		}
+		&--info {
+			&__name {
+				font-weight: 300;
+				text-align: center;
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-ecSite {
+		margin-top: 80px;
+		&__btn {
+			margin-top: 50px;
+			&--txt {
+				margin-top: 15px;
+			}
+		}
+		&__cate {
+			margin-top: 50px;
+		}
+		&__summary {
+			margin-left: -30px;
+			&--list {
+				margin-top: 30px;
+				padding-left: 30px;
+				width: calc(100% / 3);
+				perspective: 1000;
+			}
+			&--img {
+				border: 1px solid $is_color_wb08;
+			}
+			&--info {
+				margin-top: 10px;
+				&__name {
+					font-size: 1.6rem;
+
+					//各サイトの色
+					&.is-fusen        { color: #ec2b2e; }
+					&.is-memo         { color: #0188e2; }
+					&.is-ringmemo     { color: #3d891c; }
+					&.is-calendar     { color: #0179c5; }
+					&.is-fiberCloth   { color: #ef0000; }
+					&.is-uchiwa       { color: #0faada; }
+					&.is-boxTissue    { color: #f7601b; }
+					&.is-clearfile    { color: #008b3a; }
+					&.is-clip         { color: #ff335d; }
+					&.is-magnet       { color: #F69629; }
+
+				}
+				&__txt {
+					margin-top: 5px;
+					line-height: 1.75;
+				}
+			}
+			&--return {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+				&__img {
+					width: auto;
+					max-height: 100%;
+				}
+			}
+		}
+	}
+
+	//preserve3d対応ブラウザ用
+	.preserve3d {
+		.p-ecSite {
+			&__summary {
+				&--anchor {
+					transform: rotateY(0);
+					transform-style: preserve-3d;
+					transition: transform .5s ease;
+				}
+
+				&--return {
+					transform:rotateY(180deg);
+					backface-visibility: hidden;
+				}
+
+				&--list:hover {
+					.p-ecSite__summary--anchor {
+						transform: rotateY(-180deg);
+					}
+				}
+			}
+		}
+	}
+
+	//preserve3d未対応ブラウザ用
+	.no-preserve3d {
+		.p-ecSite {
+			&__summary {
+				&--anchor {
+					opacity: 1;
+					transition: opacity .5s ease;
+				}
+				&--return {
+					display: none;
+				}
+
+				&--list:hover {
+					.p-ecSite__summary--anchor {
+						opacity: .5;
+					}
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-ecSite {
+		margin-top: 40px;
+		&__btn {
+			margin-top: 30px;
+			&--txt {
+				margin-top: 15px;
+			}
+		}
+		&__cate {
+			margin-top: 25px;
+		}
+		&__summary {
+			margin-left: -15px;
+			&--list {
+				margin-top: 15px;
+				padding-left: 15px;
+				width: calc(100% / 2);
+			}
+			&--img {
+				border: 1px solid $is_color_wb08;
+				text-align: center;
+				&__photo {
+					width: 100%;
+				}
+			}
+			&--info {
+				margin-top: 10px;
+				&__name {
+					//各サイトの色
+					&.is-fusen        { color: #ec2b2e; }
+					&.is-memo         { color: #0188e2; }
+					&.is-ringmemo     { color: #3d891c; }
+					&.is-calendar     { color: #0179c5; }
+					&.is-fiberCloth   { color: #ef0000; }
+					&.is-uchiwa       { color: #0faada; }
+					&.is-boxTissue    { color: #f7601b; }
+					&.is-clearfile    { color: #008b3a; }
+					&.is-clip         { color: #ff335d; }
+					&.is-magnet       { color: #F69629; }
+				}
+				&__txt {
+					display: none;
+				}
+			}
+		}
+	}
+}

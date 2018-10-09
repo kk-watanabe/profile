@@ -1,0 +1,59 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wp/
+
+# リダイレクト
+RewriteRule ^web/p84$ /web/wai-aria_tab/ [L,R=301]
+RewriteRule ^web/p57$ /web/gulp_reco01/ [L,R=301]
+RewriteRule ^web/p49$ /web/safari_inline_mystery/ [L,R=301]
+RewriteRule ^web/api/$ / [L,R=301]
+RewriteRule ^info/p54$ / [L,R=301]
+RewriteRule ^info/twiiter_start/$ / [L,R=301]
+RewriteRule ^info/twiiter_start$ / [L,R=301]
+RewriteRule ^info/p42$ /info/hello_world/ [L,R=301]
+
+RewriteRule ^baseball$ /kinomama/cate/baseball/ [L,R=301]
+RewriteRule ^baseball/(.*)$ /kinomama/baseball/$1 [L,R=301]
+RewriteRule ^tag/(.*)$ / [L,R=301]
+
+RewriteRule ^category_list$ / [L,R=301]
+RewriteRule ^tag_list/$ / [L,R=301]
+RewriteRule ^info/permalink-change01/$ / [L,R=301]
+
+RewriteRule ^kinomama/baseball/p46$ /kinomama/cate/baseball/ [L,R=301]
+RewriteRule ^kinomama/baseball/p72$ /kinomama/cate/baseball/ [L,R=301]
+
+# WP
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wp/index.php [L]
+</IfModule>
+
+<IfModule mod_deflate.c>
+SetOutputFilter DEFLATE
+
+# GIF、JPEG、PNG、ICOなど圧縮済みの画像は再圧縮しない
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|ico)$ no-gzip dont-vary
+# プロクシサーバが間違ったコンテンツを配布しないようにする
+Header append Vary Accept-Encoding env=!dont-vary
+
+# 各コンテンツを圧縮する設定を記述
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/js
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/atom_xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE application/x-font-woff
+AddOutputFilterByType DEFLATE application/x-font-opentype
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+</IfModule>

@@ -1,0 +1,336 @@
+{
+  "cochon" : {
+    "kanban2017" : {
+      "order" : "1",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "コション・ダンド<br>チラシ、看板",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720",
+        "slide4" : "slide04.jpg",
+        "slide4_w" : "960",
+        "slide4_h" : "720",
+        "slide5" : "slide05.jpg",
+        "slide5_w" : "960",
+        "slide5_h" : "720"
+      }
+    }
+  },
+  "emuzu" : {
+    "pamphlet2017" : {
+      "order" : "2",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "株式会社エムズ<br>パンフレット",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720",
+        "slide4" : "slide04.jpg",
+        "slide4_w" : "960",
+        "slide4_h" : "720",
+        "slide5" : "slide05.jpg",
+        "slide5_w" : "960",
+        "slide5_h" : "720",
+        "slide6" : "slide06.jpg",
+        "slide6_w" : "960",
+        "slide6_h" : "720"
+      }
+    }
+  },
+  "katakura" : {
+    "pamphlet2017" : {
+      "order" : "3",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "片倉コープアグリ<br>塩釜工場",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    }
+  },
+  "keyaki" : {
+    "bmw" : {
+      "order" : "4",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "仙台BMW<br>×<br>仙台箪笥・仙台仏壇 欅産業",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720"
+      }
+    },
+    "dm" : {
+      "order" : "5",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "欅産業 DM",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720"
+      }
+    },
+    "hiyokemaku" : {
+      "order" : "6",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "欅産業 日よけ幕",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720"
+      }
+    },
+    "hoteres_a1_panel" : {
+      "order" : "7",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "欅産業 A1パネル",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    },
+    "hoteres_pamphlet" : {
+      "order" : "8",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "欅産業 イベントパンフレット",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    },
+    "kannon" : {
+      "order" : "9",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "欅産業<br>観音開きパンフレット",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    },
+    "telepal" : {
+      "order" : "10",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "欅産業 テレパル広告 A5",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720"
+      }
+    }
+  },
+  "myswan-high_school" : {
+    "pamphlet2017" : {
+      "order" : "11",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "宮城県仙台三桜高等学校<br>2017年 学校案内",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720",
+        "slide4" : "slide04.jpg",
+        "slide4_w" : "960",
+        "slide4_h" : "720"
+      }
+    }
+  },
+  "reco" : {
+    "logo" : {
+      "order" : "12",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "RECO",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720",
+        "slide4" : "slide04.jpg",
+        "slide4_w" : "960",
+        "slide4_h" : "720"
+      }
+    }
+  },
+  "rienzu" : {
+    "kannon_pamphlet" : {
+      "order" : "13",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "リエンズ 観音開きパンフレット",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    },
+    "mituori_pamphlet" : {
+      "order" : "14",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "リエンズ 三つ折りパンフレット",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    }
+  },
+  "shokei" : {
+    "a4-chirashi_2017" : {
+      "order" : "15",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "尚絅学院高等学校 A4チラシ",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720"
+      }
+    }
+  },
+  "sumori" : {
+    "succulents_chirashi" : {
+      "order" : "16",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "スモリ イベントチラシ",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720"
+      }
+    }
+  },
+  "tomiya-high_school" : {
+    "pamphlet2018" : {
+      "order" : "17",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "宮城県富谷高等学校<br>2018年 学校案内",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720",
+        "slide2" : "slide02.jpg",
+        "slide2_w" : "960",
+        "slide2_h" : "720",
+        "slide3" : "slide03.jpg",
+        "slide3_w" : "960",
+        "slide3_h" : "720",
+        "slide4" : "slide04.jpg",
+        "slide4_w" : "960",
+        "slide4_h" : "720"
+      }
+    }
+  },
+  "wakos" : {
+    "meishi" : {
+      "order" : "18",
+      "thum" : "thum_img.jpg",
+      "thum_w" : "240",
+      "thum_h" : "240",
+      "description" : "株式会社 WAKO'S<br>ロゴ・名刺",
+      "slide" : {
+        "slide1" : "slide01.jpg",
+        "slide1_w" : "960",
+        "slide1_h" : "720"
+      }
+    }
+  }
+}

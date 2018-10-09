@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	WYSIWYG用
+------------------------------------------------------------*/
+.p-detail {
+	&__mv {
+		text-align: center;
+		&--img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__box {
+		> :last-child {
+			margin-bottom: 0;
+		}
+		a {
+			color: $blue03;
+			text-decoration: underline;
+			word-break: break-all;
+		}
+		h2,
+		h3,
+		h4 {
+			font-weight: 500;
+			line-height: 1.5;
+		}
+		h2 {
+			position: relative;
+			color: $blue01;
+			&:before {
+				background-color: $blue01;
+				position: absolute;
+				left: 0;
+				content: "";
+			}
+		}
+		h3 {
+			color: $blue01;
+		}
+		h4 {
+			color: $blue02;
+		}
+		.aligncenter {
+			margin-right: auto;
+			margin-left: auto;
+			display: block;
+		}
+		ol,
+		ul {
+			li {
+				position: relative;
+				&:before {
+					position: absolute;
+					left: 0;
+				}
+			}
+		}
+		ol {
+			counter-reset: number;
+			li {
+				padding-left: 25px;
+				&:before {
+					color: $blue03;
+					font-weight: bold;
+					counter-increment: number;
+					content: counter(number)'.';
+				}
+			}
+		}
+		ul {
+			li {
+				padding-left: 15px;
+				&:before {
+					width: 5px;
+					height: 5px;
+					background-color: $blue03;
+					border-radius: 100%;
+					top: 10px;
+					content: "";
+				}
+			}
+		}
+		blockquote {
+			border: 1px solid $gray03;
+			> * {
+				margin: 0;
+			}
+		}
+		pre {
+			width: 100%;
+			background-color: #FFF;
+			display: block;
+			overflow-x: auto;
+		}
+		.scroll {
+			overflow-x: auto;
+		}
+		table {
+			width: 100% !important;
+			border-collapse: collapse;
+			border-top: 1px solid $gray06;
+		}
+		th,
+		td {
+			padding: 15px;
+			width: auto !important;
+			height: auto !important;
+			border-bottom: 1px solid $gray06;
+		}
+		thead {
+			th,
+			td {
+				background-color: $blue01;
+				color: #FFF;
+				text-align: center;
+				&:not(:first-child) {
+					border-left: 1px solid $gray06;
+				}
+			}
+		}
+		tbody {
+			th,
+			td {
+				&:first-child {
+					background-color: $blue04;
+				}
+				&:not(:first-child) {
+					border-left: 1px solid $gray06;
+				}
+			}
+		}
+
+		.syntaxhighlighter {
+			margin: 0 !important;
+		}
+	}
+}
+
+// PCへ切り替え
+@media only screen and (min-width: $pc_break_w) {
+	.p-detail {
+		&__mv {
+			margin-right: -30px;
+			margin-bottom: 30px;
+			margin-left: -30px;
+		}
+		&__box {
+			padding-bottom: 40px;
+			> p {
+				margin-bottom: 35px;
+			}
+			> div {
+				margin-bottom: 40px;
+			}
+			> ins {
+				> div {
+					margin-bottom: 40px;
+				}
+				> p {
+					margin-bottom: 35px;
+				}
+			}
+			a {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			h2,
+			h3,
+			h4 {
+				& + div {
+					margin-bottom: 40px;
+				}
+			}
+			h2 {
+				margin-left: -30px;
+				margin-bottom: 20px;
+				padding-left: 30px;
+				font-size: 3rem;
+				&:before {
+					width: 25px;
+					height: 5px;
+					top: 22px;
+				}
+			}
+			h3 {
+				margin-bottom: 20px;
+				font-size: 2.4rem;
+			}
+			h4 {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 1.8rem;
+			}
+			.alignright {
+				margin-left: 20px;
+				float: right;
+				clear: right;
+			}
+			.alignleft {
+				margin-right: 20px;
+				float: left;
+				clear: left;
+			}
+			.alignleft,
+			.alignright {
+				margin-bottom: 40px;
+				& + * + * {
+					clear: both;
+				}
+			}
+			.aligncenter {
+				margin-bottom: 40px;
+			}
+			.alignnone {
+				margin-bottom: 40px;
+			}
+			ol,
+			ul {
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			blockquote {
+				margin-bottom: 40px;
+				padding: 20px;
+				> * {
+					margin: 0;
+				}
+			}
+			pre {
+				margin-bottom: 40px;
+				padding: 20px;
+			}
+			table {
+				table-layout: fixed;
+				word-break: break-all;
+			}
+		}
+	}
+}
+
+// SPへ切り替え
+@media only screen and (max-width: $sp_break_w) {
+	.p-detail {
+		&__mv {
+			margin-right: -15px;
+			margin-bottom: 20px;
+			margin-left: -15px;
+		}
+		&__box {
+			padding-bottom: 25px;
+			> div {
+				margin-bottom: 25px;
+			}
+			> p {
+				margin-bottom: 25px;
+			}
+			> ins {
+				> div {
+					margin-bottom: 25px;
+				}
+				> p {
+					margin-bottom: 25px;
+				}
+			}
+			h2 {
+				margin-left: -15px;
+				margin-bottom: 20px;
+				padding-left: 15px;
+				font-size: 2.2rem;
+				&:before {
+					width: 10px;
+					height: 2px;
+					top: 18px;
+				}
+			}
+			h3 {
+				margin-bottom: 20px;
+				font-size: 1.8rem;
+			}
+			h4 {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 1.6rem;
+			}
+			h2,
+			h3,
+			h4 {
+				& + div {
+					margin-bottom: 20px;
+				}
+			}
+			.alignleft,
+			.alignright {
+				margin: 0 auto 25px;
+				display: block;
+			}
+			.aligncenter {
+				margin-bottom: 25px;
+			}
+			.alignnone {
+				margin-bottom: 25px;
+			}
+			ol,
+			ul {
+				margin-top: 25px;
+				margin-bottom: 25px;
+			}
+			blockquote {
+				margin-bottom: 25px;
+				padding: 10px;
+				> * {
+					margin: 0;
+				}
+			}
+			pre {
+				margin-bottom: 25px;
+				padding: 10px;
+			}
+		}
+	}
+}

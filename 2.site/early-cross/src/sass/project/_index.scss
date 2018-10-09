@@ -1,0 +1,381 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	TOPページ
+------------------------------------------------------------*/
+/*-------------------*/
+.p-topSubTtl {
+	color: $is_color_wb03;
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	#index {
+		.l-container {
+			&:before {
+				display: none;
+			}
+		}
+		.l-header {
+			background-color: $is_color_wb02a0;
+			&__logo {
+				&--img {
+					display: none;
+				}
+				&--top {
+					display: block;
+				}
+			}
+		}
+		.l-gNavi {
+			&__anchor {
+				color: $is_color_wb01;
+				&:before,
+				&:after {
+					background-color: $is_color_wb01;
+				}
+			}
+		}
+		.p-mv__scrl {
+			opacity: 0;
+		}
+
+		&.is-mvAnime {
+			&[data-hide-complete="true"] {
+				.p-mv__scrl {
+					opacity: 1;
+					transition: background-color .3s ease, opacity .3s ease 1s;
+				}
+			}
+		}
+
+		&.is-scrlMoveClass {
+			.l-container {
+				&:before {
+					display: block;
+				}
+			}
+			.l-header {
+				background-color: $is_color_wb01;
+				&__logo {
+					&--img {
+						display: block;
+					}
+					&--top {
+						display: none;
+					}
+				}
+			}
+			.l-gNavi {
+				&__anchor {
+					color: $is_color_wb03;
+					&:before,
+					&:after {
+						background-color: $is_color_or01;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*-----p-mv-----*/
+.p-mv {
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	&__bg {
+		height: 100%;
+		position: relative;
+	}
+	&__txt {
+		position: absolute;
+		@include all_center01;
+		color: $is_color_wb01;
+		font-family: $ff_roboto;
+		font-family: $ff_hirakakugo;
+		font-weight: 600;
+		text-align: center;
+		letter-spacing: -0.4em;
+		&--line {
+			letter-spacing: normal;
+		}
+	}
+	&__scrl {
+		margin: auto;
+		background-color: $is_color_wb02a0;
+		border: solid $is_color_wb01;
+		border-radius: 100%;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		left: 0;
+		z-index: 1;
+		cursor: pointer;
+		&--icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			fill: $is_color_wb02a0;
+			stroke: $is_color_wb01;
+			animation: move_arrow01 2s ease 5s infinite normal;
+			transition: stroke .5s ease;
+			cursor: pointer;
+			backface-visibility: hidden;
+		}
+	}
+}
+
+@keyframes move_arrow01 {
+	0% {
+		opacity: 0;
+		transform: translateY(-20%);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(30%);
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-mv {
+		height: 1080px;
+		background-image: url(/assets/img/index/mv_thum.jpg);
+		background-size: cover;
+		position: fixed;
+		&__bg {
+			background-image: url(/assets/img/index/dot.png);
+			z-index: 1;
+		}
+		&__txt {
+			width: 100%;
+			font-size: 6.5rem;
+			line-height: 1;
+			&--line {
+				margin: 0 10px;
+			}
+		}
+		&__scrl {
+			padding-top: 5px;
+			width: 60px;
+			height: 60px;
+			border-width: 3px;
+			bottom: 45px;
+			&--icon {
+				margin-top: -8px;
+				margin-left: -16px;
+				width: 32px;
+				height: 16px;
+			}
+			&:hover {
+				background-color: $is_color_wb01;
+				.p-mv__scrl--icon {
+					stroke: $is_color_or01;
+				}
+			}
+		}
+		&__movie {
+			width: 100%;
+			min-width: 1920px;
+			height: 1080px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			z-index: 0;
+			overflow: hidden;
+			transform: translateX(-50%);
+			&--video {
+				width: 100%;
+				height: auto;
+				position: relative;
+				top: 50%;
+				left: 0;
+				opacity: 0;
+				transform: translateY(-50%);
+				transition: opacity 1s ease;
+				&.is-playing {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	[data-hide-complete="true"] {
+		.p-mv__txt--in {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-mv {
+		height: 480px;
+		background-image: url(/assets/img/index/mv01.jpg);
+		background-position: top center;
+		background-size: cover;
+		position: absolute;
+		&__bg {
+			background-color: $is_color_wb02a5;
+		}
+		&__txt {
+			font-size: 4.5rem;
+			&--line {
+				display: block;
+			}
+		}
+		&__scrl {
+			padding-top: 2px;
+			width: 40px;
+			height: 40px;
+			border-width: 1px;
+			outline: none;
+			bottom: 25px;
+			&--icon {
+				margin-top: -3px;
+				margin-left: -6px;
+				width: 12px;
+				height: 6px;
+			}
+		}
+	}
+}
+
+/*-----p-index__frame-----*/
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-index__body {
+		background-color: $is_color_wb01;
+		position: relative;
+		z-index: 1;
+	}
+
+	.p-index__frame {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-index__frame {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		&--txt {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+	}
+}
+
+/*-----p-loopSlider-----*/
+.p-loopSlider {
+	overflow: hidden;
+	&__in {
+		@include cf;
+	}
+	&__list {
+		float: left;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-loopSlider {
+		margin-top: 80px;
+		height: 250px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-loopSlider {
+		margin-top: 40px;
+		height: 125px;
+		&__img {
+			width: auto;
+			height: 125px;
+		}
+	}
+}
+
+/*-----p-topNews-----*/
+.p-topNews {
+	background: url(/assets/img/common/bg/bg02.png);
+	border-top: 1px solid $is_color_wb09;
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-topNews {
+		&__btn {
+			margin-top: 50px;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-topNews {
+		padding-right: 20px;
+		padding-left: 20px;
+		&__btn {
+			margin-top: 25px;
+		}
+	}
+}
+
+/*-----p-topNavi-----*/
+.p-topNavi {
+	&.c-pageNavi {
+		padding-top: 0;
+	}
+	.is-commingSoon {
+		color: $is_color_wb05;
+		pointer-events: none;
+		&:after {
+			background-color: $is_color_wb01;
+			position: absolute;
+			@include all_center01;
+			color: $is_color_wb03;
+			font-family: $ff_roboto;
+			font-weight: bold;
+			content: "COMMING SOON";
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-topNavi {
+		.c-pageNavi__txt {
+			margin-top: 20px;
+		}
+		.is-commingSoon {
+			&:after {
+				margin-top: 20px;
+				padding: 20px 50px;
+				font-size: 3rem;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-topNavi {
+		.is-commingSoon {
+			&:after {
+				padding: 10px 5px;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

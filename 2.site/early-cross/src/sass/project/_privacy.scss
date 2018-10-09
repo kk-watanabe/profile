@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	PRIVACY - 個人情報保護方針
+------------------------------------------------------------*/
+//p-privacy
+.p-privacy {
+	text-align: left;
+	counter-reset: privacyItem;
+	&__ttl {
+		color: $is_color_or01;
+		font-weight: 400;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-privacy {
+		@include conts_center;
+		&__ttl {
+			font-size: 3.6rem;
+			& + * {
+				margin-top: 35px;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-privacy {
+		&__ttl {
+			font-size: 2rem;
+			& + * {
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+//p-privacyItem
+.p-privacyItem {
+	&__ttl {
+		font-weight: 400;
+		&:before {
+			counter-increment: privacyItem;
+			content: counter(privacyItem)". ";
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-privacyItem {
+		margin-top: 70px;
+		&__ttl {
+			font-size: 2.4rem;
+			& + * {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-privacyItem {
+		margin-top: 35px;
+		&__ttl {
+			font-size: 1.6rem;
+			& + * {
+				margin-top: 10px;
+			}
+		}
+	}
+}

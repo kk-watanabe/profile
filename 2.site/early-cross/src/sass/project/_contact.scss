@@ -1,0 +1,635 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	CONTACT - お問い合せ
+------------------------------------------------------------*/
+/*-----p-required-----*/
+.p-required {
+	color: $is_color_red01;
+}
+
+/*-----テキスト-----*/
+[data-error-txt],
+[data-success-txt] {
+	position: relative;
+}
+
+[data-error-txt] {
+	&:after {
+		color: $is_color_red01;
+		content: attr(data-error-txt);
+	}
+}
+
+[data-success-txt] {
+	&:before {
+		padding: 5px;
+		background-color: $is_color_gre02;
+		border-radius: 100%;
+		color: $is_color_wb01;
+		line-height: 1;
+		content: attr(data-success-txt);
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-typeItem {
+		padding: 20px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-typeItem {
+		padding: 10px;
+	}
+}
+
+
+/*-----p-contactFlow-----*/
+.p-contactFlow {
+	display: flex;
+	text-align: center;
+	&__list {
+		position: relative;
+		flex: 1;
+		font-weight: 400;
+		&:after {
+			width: 100%;
+			height: 100%;
+			border-style: solid;
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+		}
+		&:not(:first-child) {
+			&:before {
+				@include arrow(12px, 1px, $is_color_wb05, 45deg);
+				position: absolute;
+			}
+		}
+		&:not(.is-current) {
+			&:after {
+				border-width: 1px;
+				border-color: $is_color_wb05;
+			}
+		}
+		&.is-current {
+			color: $is_color_or01;
+			&:after {
+				border-width: 2px;
+				border-color: $is_color_or01;
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-contactFlow {
+		margin-top: 70px;
+		& + * {
+			margin-top: 50px;
+		}
+		&__list {
+			padding: 20px;
+			&:not(:first-child) {
+				margin-left: 50px;
+				&:before {
+					left: -12.5%;
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-contactFlow {
+		margin-top: 35px;
+		& + * {
+			margin-top: 25px;
+		}
+		&__list {
+			padding: 10px;
+			&:not(:first-child) {
+				margin-left: 25px;
+				&:before {
+					left: -21px;
+				}
+			}
+		}
+	}
+}
+
+/*-----p-contactForm-----*/
+.p-contactForm {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 800px;
+	text-align: left;
+	&__in {
+		font-size: 1.6rem;
+	font-weight: 300;
+	}
+	&__ttl {
+		&:not(:first-child) {
+			margin-top: 25px;
+		}
+	}
+	&__box {
+		margin-top: 10px;
+		position: relative;
+		&--errorTxt {
+			margin-top: 10px;
+			color: $is_color_red01;
+			&:before {
+				content: "※ ";
+			}
+		}
+		&.is-confirm {
+			padding: 10px;
+			background-color: $is_color_wb09;
+		}
+
+		&[data-error-txt] {
+			&:after {
+				opacity: 0;
+				z-index: 1;
+				transition: opacity .3s ease;
+			}
+
+			&[data-show-txt="error"] {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+
+		&[data-success-txt] {
+			&:before {
+				opacity: 0;
+				z-index: 1;
+				transition: opacity .3s ease, transform .3s ease;
+			}
+
+			&[data-show-txt="success"] {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__privacy {
+		margin-right: auto;
+		margin-left: auto;
+		display: table;
+		text-align: center;
+		@include anchor_setting01;
+		&.is-error01 {
+			background-color: $is_color_red02;
+		}
+
+		&[data-error-txt] {
+			&:after {
+				margin: 0;
+				position: absolute;
+				opacity: 0;
+				bottom: -30px;
+				right: 0;
+				left: 0;
+				z-index: 1;
+
+				transition: opacity .3s ease;
+			}
+
+			&[data-show-txt="error"] {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+
+		&[data-success-txt] {
+			&:before {
+				padding-top: 7px;
+				padding-bottom: 7px;
+				position: absolute;
+				top: -3px;
+				right: -30px;
+				opacity: 0;
+				z-index: 1;
+
+				transition: opacity .3s ease;
+			}
+
+			&[data-show-txt="success"] {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+		&--txt {
+			display: inline;
+			transition: background-color .3s ease, border-color .3s ease;
+		}
+		&--anchor {
+			margin-top: 10px;
+			font-size: 1.4rem;
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-contactForm {
+		&__box {
+			&[data-error-txt] {
+				&:after {
+					position: absolute;
+					top: -30px;
+					right: 0;
+				}
+			}
+
+			&[data-success-txt] {
+				&:before {
+					padding-top: 8px;
+					padding-bottom: 8px;
+					position: absolute;
+					top: 50%;
+					right: 15px;
+					transform: translate(-20%, -50%);
+				}
+
+				&[data-show-txt="success"] {
+						&:before {
+							transform: translate(0, -50%);
+						}
+					}
+			}
+		}
+		&__privacy {
+			margin-top: 45px;
+			padding: 5px;
+		}
+		&__submit {
+			margin-top: 65px;
+			@include flex_center;
+			&--list {
+				margin: 0 15px;
+			}
+		}
+		&__btn {
+			&.is-repair {
+				background-color: $is_color_wb06;
+				border-color: $is_color_wb06;
+				color: $is_color_wb04;
+				.c-btn02__txt {
+					&:before,
+					&:after {
+						background-color: $is_color_wb05;
+					}
+				}
+
+				&:hover {
+					color: $is_color_wb01;
+					.c-btn02__txt {
+						&:before,
+						&:after {
+							background-color: $is_color_wb01;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-contactForm {
+		&__box {
+			&[data-error-txt] {
+				&:after {
+					margin-top: 10px;
+					display: none;
+				}
+
+				&[data-show-txt="error"] {
+					&:after {
+						display: block;
+					}
+				}
+			}
+
+			&[data-success-txt] {
+				&:before {
+					padding-top: 8px;
+					padding-bottom: 8px;
+					position: absolute;
+					top: -10px;
+					right: 10px;
+				}
+			}
+		}
+		&__privacy {
+			margin-top: 20px;
+			padding: 3px;
+		}
+		&__submit {
+			margin-top: 30px;
+			display: flex;
+			flex-wrap: wrap;
+			&--list {
+				width: 100%;
+				&:first-child {
+					margin-top: 15px;
+					order: 2;
+				}
+				&:not(:first-child) {
+					order: 1;
+				}
+			}
+		}
+		&__btn {
+			&:not(.is-repair) {
+				background-color: $is_color_or01;
+				border-color: $is_color_or01;
+				color: $is_color_wb01;
+				.c-btn01__txt {
+					&:before,
+					&:after {
+						background-color: $is_color_wb01;
+					}
+				}
+			}
+		}
+	}
+}
+
+//input & textarea
+.p-inputParts01 {
+	width: 100%;
+	background-color: $is_color_wb09;
+	border: 1px solid $is_color_wb09;
+	font-size: 1.6rem;
+	line-height: 1;
+	transition: background-color .3s ease, border-color .3s ease;
+
+	&:placeholder-shown {
+		color: $is_color_wb05;
+	}
+
+	&::-webkit-input-placeholder {
+		padding-top: 5px;
+		color: $is_color_wb05;
+	}
+
+	&:-moz-placeholder {
+		opacity: 1;
+		color: $is_color_wb05;
+	}
+
+	&::-moz-placeholder {
+		opacity: 1;
+		color: $is_color_wb05;
+	}
+
+	&:-ms-input-placeholder {
+		color: $is_color_wb05;
+	}
+}
+
+//エラー時
+.is-error01 {
+	.p-inputParts01 {
+		background-color: $is_color_red02;
+		border-color: $is_color_red02;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-inputParts01 {
+		padding: 20px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-inputParts01 {
+		padding: 10px;
+		height: 46px;
+	}
+}
+
+.p-textarea01 {
+	width: 100%;
+	background-color: $is_color_wb09;
+	border: 1px solid $is_color_wb09;
+	font-size: 1.6rem;
+	resize: none;
+	transition: background-color .3s ease, border-color .3s ease;
+}
+
+//エラー時
+.is-error01 {
+	.p-textarea01 {
+		background-color: $is_color_red02;
+		border-color: $is_color_red02;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-textarea01 {
+		padding: 20px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-textarea01 {
+		padding: 10px;
+	}
+}
+
+
+//p-typeItem
+.p-typeItem {
+	background-color: $is_color_wb09;
+	transition: background-color .3s ease, border-color .3s ease;
+
+	&__list {
+		&:not(:first-child) {
+			margin-top: 5px;
+		}
+	}
+}
+
+//エラー時
+.is-error01 {
+	.p-typeItem {
+		background-color: $is_color_red02;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-typeItem {
+		padding: 20px;
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-typeItem {
+		padding: 10px;
+	}
+}
+
+
+//p-checkbox01
+.p-checkbox01 {
+	padding-left: 25px;
+	position: relative;
+	&__input {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	&__label {
+		cursor: pointer;
+	}
+	&__icon {
+		width: 15px;
+		height: 15px;
+		background-color: #FFF;
+		border: 1px solid $is_color_wb06;
+		position: absolute;
+		top: 5px;
+		left: 0;
+		z-index: 1;
+		&:before,
+		&:after {
+			height: 3px;
+			background-color: $is_color_or01;
+			position: absolute;
+			content: "";
+		}
+		&:before {
+			width: 0;
+			bottom: 4px;
+			left: 0;
+			transform: rotate(45deg);
+			transition: width .1s ease .13s;
+		}
+		&:after {
+			width: 0;
+			bottom: 5px;
+			left: 3px;
+			transform: rotate(-45deg);
+			transition: width .1s ease;
+		}
+	}
+
+	&__input:checked {
+		& + .p-checkbox01__label {
+			.p-checkbox01__icon {
+				&:before {
+					width: 7px;
+					transition: width .1s ease;
+				}
+				&:after {
+					width: 12px;
+					transition: width .1s ease .13s;
+				}
+			}
+		}
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-checkbox01 {
+		&__label {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+}
+
+.p-companyInfo {
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 1.75;
+
+	&__ttl {
+		color: $is_color_or01;
+		font-weight: 300;
+	}
+	&__box {
+		text-align: left;
+	}
+	&__tel {
+		color: $is_color_wb03;
+		text-decoration: none;
+	}
+	&__mail {
+		color: $is_color_wb03;
+		text-decoration: none;
+	}
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-companyInfo {
+		margin-top: 40px;
+		display: table;
+		& + * {
+			margin-top: 70px;
+		}
+
+		&__ttl,
+		&__box {
+			display: table-cell;
+			vertical-align: top;
+		}
+		&__box {
+			padding-left: 20px;
+		}
+		&__tel {
+			pointer-events: none;
+		}
+		&__mail {
+			@include text_hover_anime01($is_color_wb05);
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-companyInfo {
+		margin-top: 25px;
+		display: table;
+		& + * {
+			margin-top: 35px;
+		}
+
+		&__ttl {
+			text-align: left;
+		}
+		&__box {
+			margin-top: 5px;
+		}
+	}
+}

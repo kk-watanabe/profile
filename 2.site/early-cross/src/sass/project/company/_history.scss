@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	COMPANY - 沿革
+------------------------------------------------------------*/
+/*-----p-history-----*/
+.p-history {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 600px;
+	text-align: left;
+}
+
+// PC用
+@media only screen and (min-width: $pc_break_w){
+	.p-history {
+		margin-bottom: -30px;
+		&__time {
+			float: left;
+			clear: left;
+		}
+		&__detail {
+			padding-bottom: 30px;
+			padding-left: 110px;
+		}
+	}
+}
+
+// SP用
+@media only screen and (max-width: $sp_break_w){
+	.p-history {
+		position: relative;
+		&:before {
+			width: 5px;
+			height: 100%;
+			background-color: $is_color_wb06;
+			position: absolute;
+			top: 0;
+			left: 10px;
+			content: "";
+		}
+		&__time {
+			padding: 7px 15px;
+			background-color: $is_color_or01;
+			display: table;
+			position: relative;
+			z-index: 1;
+			color: $is_color_wb01;
+			font-size: 1.2rem;
+			text-align: center;
+			&:not(:first-child) {
+				margin-top: 40px;
+			}
+		}
+		&__detail {
+			padding-top: 15px;
+			padding-left: 30px;
+			&:last-child {
+				background-color: $is_color_wb01;
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+}
