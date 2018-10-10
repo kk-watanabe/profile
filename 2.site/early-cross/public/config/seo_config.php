@@ -2,8 +2,8 @@
 /******************************************************************************
  * SEO対策
  * コンフィギュレーションファイル
- * Copyright(c) K.Sasaki All Rights Reserved.
- * @Author : K.Sasaki
+ * Copyright(c) K.Watanabe All Rights Reserved.
+ * @Author : K.Watanabe
  * @access : public
  *
  *****************************************************************************/
