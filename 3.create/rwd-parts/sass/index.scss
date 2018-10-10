@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "vars";	// 変数
+@import "functions"; // 関数等
+/*------------------------------------------------------------
+	トップページ
+------------------------------------------------------------*/
+#container {
+	padding: 20px;
+}
+
+#listBox {
+	a {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		height: 200px;
+		background-color: #FFF;
+		border: 5px solid #004C99;
+		display: table;
+		@include fs(14);
+		text-decoration: none;
+	}
+	.in {
+		padding: 30px;
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+/* PCへ切り替え */
+@media only screen and (min-width: $break_pc_width) {
+	#listBox {
+		margin-top: -100px;
+		margin-left: -480px;
+		width: 960px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include cf;
+		li {
+			margin-left: 30px;
+			width: 300px;
+			float: left;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		a {
+			&:hover {
+				background-color: #004C99;
+				color: #FFF;
+			}
+		}
+	}
+}
+
+/* SPへ切り替え */
+@media only screen and (max-width: $break_sp_width) {
+	#listBox {
+		li {
+			margin-top: 20px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
