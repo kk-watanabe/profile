@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+  変数
+------------------------------------------------------------*/
+@import "vars";
+
+/*------------------------------------------------------------
+  関数等
+------------------------------------------------------------*/
+@import "functions";
+
+/*------------------------------------------------------------
+	Foundation - スタイル初期設定
+------------------------------------------------------------*/
+@import "reset";
+
+/*------------------------------------------------------------
+	ページ用
+------------------------------------------------------------*/
+.ff-notojp { font-family: "Noto Sans Japanese", serif; }
+.ff-droid { font-family: 'Droid Serif', serif; }
+
+body {
+	background-color: $gray01;
+	font-family: "Noto Sans Japanese", serif;
+}
+
+#header {
+	padding: 10px;
+	background-color: $blue01;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	.site-name {
+		color: #FFF;
+		font-size: 1.8rem;
+	}
+}
+
+#main {
+	margin: 10px 0;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	.anchor {
+		padding: 15px;
+		width: 100%;
+		background-color: #FFF;
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+		display: table;
+		color: #666;
+		font-size: 1.2rem;
+		text-decoration: none;
+		> div {
+			display: table-cell;
+			vertical-align: top;
+		}
+	}
+	.thum {
+		padding-right: 15px;
+		width: 100px;
+	}
+	.detail {
+		line-height: 1.5;
+	}
+	.around {
+		margin-bottom: 10px;
+		color: #999;
+	}
+	.ttl {
+		margin-bottom: 5px;
+		color: #111;
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+	.work {
+		margin-bottom: 5px;
+		&:before {
+			content: "担当：";
+		}
+	}
+	.summary {
+		&:before {
+			content: "概要：";
+		}
+	}
+}
+
+#footer {
+	padding: 10px;
+	background-color: $blue01;
+	color: #FFF;
+	font-size: 1.1rem;
+	text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+	#header {
+		padding: 20px 30px;
+		.site-name {
+			font-size: 2.5rem;
+		}
+	}
+
+	#main {
+		margin: 20px auto;
+		padding: 0 20px;
+		max-width: 960px;
+		.anchor {
+			padding: 25px;
+			font-size: 1.6rem;
+		}
+		.thum {
+			padding-right: 25px;
+			width: 250px;
+			img {
+				width: 100%;
+			}
+		}
+		.around {
+			margin-bottom: 10px;
+			font-size: 1.3rem;
+		}
+		.ttl {
+			margin-bottom: 5px;
+			font-size: 2rem;
+		}
+		.work {
+			margin-bottom: 5px;
+		}
+	}
+
+	#footer {
+		padding: 20px;
+		font-size: 1.4rem;
+	}
+
+	//PC閲覧時
+	.pc_device {
+		#main {
+			.anchor {
+				transition: box-shadow 300ms ease, margin 300ms ease;
+				&:hover {
+					margin: 20px 0;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	//PC閲覧時
+	.pc_device {
+		#main {
+			.anchor {
+				transition: box-shadow 300ms ease, margin 300ms ease, width 300ms ease;
+				&:hover {
+					margin: 20px -40px;
+					width: 1000px;
+				}
+			}
+		}
+	}
+}

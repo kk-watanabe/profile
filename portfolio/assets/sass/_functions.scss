@@ -1,0 +1,65 @@
+@charset "UTF-8";
+//
+// mixin,extendで使用する
+//
+
+// 文字サイズ
+@mixin fs($fontSize, $baseFontSize:10){
+	font-size: #{$fontSize / $baseFontSize}em;
+}
+// example:
+// @include fs(15);
+// @include fs(20, 13);
+// ※第二引数のサイズをベースとして20pxになるよう計算された値が出力される
+
+//%にしたい場合は、
+//@mixin fs($fontSize, $baseFontSize:10){
+//font-size: percentage($fontSize / $baseFontSize);
+//}
+//に変更
+
+// clearfix（float解除）
+%cf {
+	@if $support-ie6 or $support-ie7 {
+		*zoom: 1;
+	}
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+// example:
+// @extend %cf;
+
+// clearfix（float解除）
+@mixin cf{
+	@if $support-ie6 or $support-ie7 {
+		*zoom: 1;
+	}
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+// example:
+// @extend cf;
+
+// 背景
+@mixin bg01{
+	background-color: #FFF;
+	// box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+// font-family
+@mixin ffMplus{
+	font-family: 'M PLUS 1p', sans-serif;
+}
+
+// 横幅最大800pxで右寄りコンテンツ
+@mixin contsRight{
+	margin-right: 0;
+	margin-left: auto;
+	max-width: 800px;
+}
